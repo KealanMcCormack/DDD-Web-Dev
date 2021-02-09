@@ -30,7 +30,7 @@
 # Brief from notes
 All users should be able to:
     G0: View the products currently on offer
-    G1: View details about a particular product
+    1: View details about a particular product
     G2: Add a product to their shopping cart
     G3: Remove a product from their shopping cart
     G4: Search for a product.
