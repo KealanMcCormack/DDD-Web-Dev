@@ -1,0 +1,51 @@
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:auto;
+}
+.subText{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    margin: auto;
+    padding-bottom: 10px;
+    border-bottom: 2.5px solid black;
+}
+
+.body{
+    width: 100%;
+}
+
+.loginText{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 25px;
+    padding-top: 60px;
+}
+
+.loginTable{
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loginHead{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.loginBox{
+    width: 250px;
+}
+
+.loginPageButton{
+    margin: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 4px;
+    padding: 5px 50px;
+    background-image: linear-gradient(#353535, cornflowerblue);
+}
