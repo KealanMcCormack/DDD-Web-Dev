@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/login.css">
+    <title>login</title>
+</head>
+<body>
+
+<div class="container">
+    <h3 class="title">Amazon't</h3>
+    <p class="subText">Just a regular store</p>
+</div>
+
+
+<form method="POST" action="/login">
+    <h3 class="loginText">Login into existing account</h3>
+
+    <table class="loginTable">
+        <tr>
+            <th class="loginHead">
+                Username:
+            </th>
+
+            <td>
+                <input type="text" class="loginBox" name="usernameBox">
+            </td>
+        </tr>
+
+        <tr>
+            <th class="loginHead">
+                Password:
+            </th>
+
+            <td>
+                <input type="text" class="loginBox" name="passwordBox">
+            </td>
+        </tr>
+
+    </table>
+
+    <button type="submit" class="loginPageButton">Login</button>
+
+</form>
+
+
+</body>
+</html>
