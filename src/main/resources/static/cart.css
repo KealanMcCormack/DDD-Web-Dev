@@ -19,7 +19,7 @@
 .cartTable{
     border-collapse: collapse;
     width: 100%;
-    margin-top: 2.5%;
+    margin-top: 6%;
     text-align: left;
 }
 
@@ -41,4 +41,52 @@
 .tableHeaderTextPrice{
     width: 110px;
     text-align: center;
+}
+
+.totalPrice{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+
+    margin: 0;
+    position: absolute;
+    bottom: 70%;
+    left: 69%;
+}
+
+.totalPriceBox{
+    width: 90px;
+    height: 20px;
+    resize: none;
+
+    margin: 0;
+    position: absolute;
+    bottom: 70%;
+    left: 75%;
+}
+
+.cartPageBackButton{
+    margin: 0;
+    position: absolute;
+    top: 11%;
+    left: 80%;
+
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 4px;
+    padding: 5px 26px;
+    background-image: linear-gradient(#353535, cornflowerblue);
+}
+
+.cartBuyButton{
+    margin: 0;
+    position: absolute;
+    top: 80%;
+    left: 80%;
+
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 4px;
+    padding: 6px 24px;
+    background-image: linear-gradient(#353535, cornflowerblue);
 }
