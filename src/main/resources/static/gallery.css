@@ -18,18 +18,32 @@
     padding-right: 10px;
     float: right;
 }
-.createAccount{
+.createAccount{  
     padding-top: 10px;
     padding-right: 10px;
     float:right;
 }
 .gridContainer{
-    margin:auto;
-    width: 71%;
-    text-align: center;
+    width: 100vw;
+    grid-template-columns: repeat(10, 1fr);
+    margin:0;
     display: grid;
-    grid-template-columns: 400px 400px 400px;
 }
 .gridItem{
+    text-align: center;
+    padding-top: 10px;
     display: grid;
+    transition: 10ms;
+}
+.gridItem p{
+    font-style: italic;
+}
+.gridItem img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.gridItem:hover{
+    transition: 10ms;
+    background-color: cornflowerblue;
 }
