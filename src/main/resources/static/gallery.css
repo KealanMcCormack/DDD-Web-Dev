@@ -1,9 +1,13 @@
+html{
+    background-color: #071013;
+}
 .cotainer{
     width:800px;
 }
 .title{
     font-family: Arial, Helvetica, sans-serif;
     margin:auto;
+    color: #75ABBC;
 }
 .subText{
     font-family: Arial, Helvetica, sans-serif;
@@ -11,17 +15,20 @@
     font-size: 12px;
     margin: auto;
     padding-bottom: 10px;
-    border-bottom: 2.5px solid black;
+    border-bottom: 2.5px solid #75ABBC;
+    color: #75ABBC;
 }
 .login{
     padding-top: 10px;
     padding-right: 10px;
     float: right;
+    color: #75ABBC;
 }
 .createAccount{  
     padding-top: 10px;
     padding-right: 10px;
     float:right;
+    color: #75ABBC;
 }
 .gridContainer{
     width: 100vw;
@@ -36,6 +43,8 @@
     transition: 10ms;
 }
 .gridItem p{
+    color: #75ABBC;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
 }
 .gridItem img{
