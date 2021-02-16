@@ -1,0 +1,46 @@
+.container{
+    height: 1000px;
+    width: 100%;
+    position: relative;
+}
+
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:auto;
+}
+
+.subText{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    margin: auto;
+    padding-bottom: 10px;
+    border-bottom: 2.5px solid black;
+}
+
+.back {
+    position: absolute;
+    left: 10%;
+    top: 6%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(#353535, cornflowerblue);
+    color: white;
+    border-radius: 4px;
+}
+
+.addToCart {
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(#353535, cornflowerblue);
+    color: white;
+    border-radius: 4px;
+}
+
+.productImage {
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 200px;
+}

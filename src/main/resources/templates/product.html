@@ -2,9 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <link rel="stylesheet" href="../static/product.css">
+    <title>Product page</title>
 </head>
 <body>
-$END$
+<div class="container">
+    <h3 class="title">Amazon't</h3>
+    <p class="subText">bottom text</p>
+
+
+    <div>
+        <form method="get" action="/">
+            <button type="submit" class="back">Back</button>
+        </form>
+    </div>
+
+    <div>
+        <!-- image path needs to be held in array -->
+        <p class="productImage"><img src="../static/images/logo.jpg" alt="l"/></p>
+    </div>
+
+    <div>
+        <!-- Use spring boot to grab product name -->
+        <p>Product: </p>
+        <p th:text="product.name">Placeholder Product Name</p>
+    </div>
+
+    <div>
+        <!-- Use spring boot to grab product description -->
+        <p>Description: </p>
+        <p th:text="product.description">Placeholder Description</p>
+    </div>
+
+    <div>
+        <!-- Use spring boot to send person id and product id to server -->
+        <form method="post" action="">
+            <button type="submit" class="addToCart">Add to Cart</button>
+        </form>
+    </div>
+</div>
 </body>
 </html>
