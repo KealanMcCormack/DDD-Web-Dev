@@ -9,8 +9,12 @@
 
 <div class="container">
     <h3 class="title">Amazon't</h3>
-    <p class="subText">Just a regular store</p>
+    <p class="subText">BUY PLEASE</p>
 </div>
+
+<form method="GET" action="/gallery">
+    <button type="submit" class="cartPageBackButton">Back</button>
+</form>
 
 <div class="tableContainer">
     <table class="cartTable">
@@ -29,12 +33,27 @@
         </tr>
 
         <tr>
+            <td>
 
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p class="totalPrice">Total Price:</p>
+                <textarea readonly class="totalPriceBox" name="priceBox"></textarea>
+            </td>
 
         </tr>
 
     </table>
+
+    <form method="GET" action="/checkout">
+        <button type="submit" class="cartBuyButton">Buy</button>
+    </form>
+
 </div>
+
 
 
 </body>
