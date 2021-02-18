@@ -1,6 +1,11 @@
+html{
+    background-color: #071013;
+}
+
 .title{
     font-family: Arial, Helvetica, sans-serif;
     margin:auto;
+    color: #75ABBC;
 }
 .subText{
     font-family: Arial, Helvetica, sans-serif;
@@ -8,7 +13,8 @@
     font-size: 12px;
     margin: auto;
     padding-bottom: 10px;
-    border-bottom: 2.5px solid black;
+    border-bottom: 2.5px solid #75ABBC;
+    color: #75ABBC;
 }
 
 .body{
@@ -20,6 +26,7 @@
     text-align: center;
     font-size: 25px;
     padding-top: 60px;
+    color: #75ABBC;
 }
 
 .loginTable{
@@ -30,6 +37,7 @@
 
 .loginHead{
     font-family: Arial, Helvetica, sans-serif;
+    color: #75ABBC;
 }
 
 .loginBox{
@@ -43,11 +51,11 @@
     left: 52%;
     transform: translate(-50%, -50%);
 
-    background-color: cornflowerblue;
-    color: white;
+    background-color: #23B5D3;
+    color: #071013;
     border-radius: 4px;
     padding: 5px 50px;
-    background-image: linear-gradient(#353535, cornflowerblue);
+    background-image: linear-gradient(#75ABBC, #23B5D3);
 }
 
 .loginPageBackButton{
@@ -57,9 +65,9 @@
     left: 71%;
     transform: translate(-2%, -50%);
 
-    background-color: cornflowerblue;
-    color: powderblue;
+    background-color: #23B5D3;
+    color: #071013;
     border-radius: 4px;
     padding: 5px 24px;
-    background-image: linear-gradient(#353535, cornflowerblue);
+    background-image: linear-gradient(#75ABBC, #23B5D3);
 }
