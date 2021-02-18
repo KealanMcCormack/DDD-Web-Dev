@@ -1,6 +1,11 @@
+html{
+    background-color: #071013;
+}
+
 .title{
     font-family: Arial, Helvetica, sans-serif;
     margin:auto;
+    color: #75ABBC;
 }
 .subText{
     font-family: Arial, Helvetica, sans-serif;
@@ -8,7 +13,8 @@
     font-size: 12px;
     margin: auto;
     padding-bottom: 10px;
-    border-bottom: 2.5px solid black;
+    border-bottom: 2.5px solid #75ABBC;
+    color: #75ABBC;
 }
 
 .tableContainer{
@@ -27,6 +33,70 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     border-bottom: 2px solid cornflowerblue;
+    color: #75ABBC;
+}
+
+.tableHeaderTextName{
+    width: 300px;
+}
+
+.tableHeaderTextQuantity{
+    width: 50px;
+    text-align: center;
+}
+
+.tableHeaderTextPrice{
+    width: 110px;
+    text-align: center;
+}
+
+.totalPrice{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #75ABBC;
+
+    margin: 0;
+    position: absolute;
+    bottom: 70%;
+    left: 69%;
+}
+
+.totalPriceBox{
+    width: 90px;
+    height: 20px;
+    resize: none;
+
+    margin: 0;
+    position: absolute;
+    bottom: 70%;
+    left: 75%;
+}
+
+.cartPageBackButton{
+    margin: 0;
+    position: absolute;
+    top: 11%;
+    left: 80%;
+
+    background-color: #23B5D3;
+    color: #071013;
+    border-radius: 4px;
+    padding: 5px 26px;
+    background-image: linear-gradient(#75ABBC, #23B5D3);
+}
+
+.cartBuyButton{
+    margin: 0;
+    position: absolute;
+    top: 80%;
+    left: 80%;
+
+    background-color: #23B5D3;
+    color: #071013;
+    border-radius: 4px;
+    padding: 5px 24px;
+    background-image: linear-gradient(#75ABBC, #23B5D3);
 }
 
 .tableHeaderTextName{
