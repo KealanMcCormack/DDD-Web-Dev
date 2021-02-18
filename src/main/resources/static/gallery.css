@@ -1,7 +1,7 @@
 html{
     background-color: #071013;
 }
-.cotainer{
+.container{
     width:800px;
 }
 .title{
@@ -19,16 +19,22 @@ html{
     color: #75ABBC;
 }
 .login{
-    padding-top: 10px;
-    padding-right: 10px;
     float: right;
-    color: #75ABBC;
+
+    background-color: #23B5D3;
+    color: #071013;
+    border-radius: 4px;
+    padding: 5px 24px;
+    background-image: linear-gradient(#75ABBC, #23B5D3);
 }
-.createAccount{  
-    padding-top: 10px;
-    padding-right: 10px;
+.createAccount{
     float:right;
-    color: #75ABBC;
+
+    background-color: #23B5D3;
+    color: #071013;
+    border-radius: 4px;
+    padding: 5px 24px;
+    background-image: linear-gradient(#75ABBC, #23B5D3);
 }
 .gridContainer{
     width: 100vw;
