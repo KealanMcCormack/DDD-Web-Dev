@@ -20,4 +20,18 @@ public class MainController {
         model.addAttribute("products", productList);
         return "gallery.html";
     }
+
+    @GetMapping("/cart")
+    public String cart(){
+        return "cart.html";
+    }
+
+    @GetMapping("/login")
+    public String login(Model model){
+
+
+
+
+        return "login.html";
+    }
 }
