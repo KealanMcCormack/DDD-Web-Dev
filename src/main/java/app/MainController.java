@@ -4,12 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 @Controller
 public class MainController {
 
     ArrayList<Product> productList = new ArrayList<>();
+    ArrayList<Customer> customerList = new ArrayList<>();
 
     @GetMapping("/")
     public String gallery(Model model){
@@ -29,9 +31,7 @@ public class MainController {
     @GetMapping("/login")
     public String login(Model model){
 
-
-
-
+       model.addAttribute("customers", customerList);
         return "login.html";
     }
 }
