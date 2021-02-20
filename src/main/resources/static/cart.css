@@ -84,6 +84,7 @@ html{
     border-radius: 4px;
     padding: 5px 26px;
     background-image: linear-gradient(#75ABBC, #23B5D3);
+    font-weight: bold;
 }
 
 .cartBuyButton{
@@ -95,8 +96,9 @@ html{
     background-color: #23B5D3;
     color: #071013;
     border-radius: 4px;
-    padding: 5px 24px;
+    padding: 5px 30px;
     background-image: linear-gradient(#75ABBC, #23B5D3);
+    font-weight: bold;
 }
 
 .tableHeaderTextName{
@@ -135,28 +137,3 @@ html{
     left: 75%;
 }
 
-.cartPageBackButton{
-    margin: 0;
-    position: absolute;
-    top: 11%;
-    left: 80%;
-
-    background-color: cornflowerblue;
-    color: white;
-    border-radius: 4px;
-    padding: 5px 26px;
-    background-image: linear-gradient(#353535, cornflowerblue);
-}
-
-.cartBuyButton{
-    margin: 0;
-    position: absolute;
-    top: 80%;
-    left: 80%;
-
-    background-color: cornflowerblue;
-    color: white;
-    border-radius: 4px;
-    padding: 6px 24px;
-    background-image: linear-gradient(#353535, cornflowerblue);
-}
