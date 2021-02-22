@@ -20,17 +20,15 @@ html{
 }
 .login{
     float: right;
-
     background-color: #23B5D3;
     color: #071013;
     border-radius: 4px;
     padding: 5px 24px;
-    background-image: linear-gradient(#75ABBC, #23B5D3);
+    background-image: linear-gradient(#75ABBC, #23b5d3);
     font-weight: bold;
 }
 .createAccount{
     float:right;
-
     background-color: #23B5D3;
     color: #071013;
     border-radius: 4px;
@@ -41,7 +39,7 @@ html{
 .gridContainer{
     width: 100vw;
     grid-template-columns: repeat(10, 1fr);
-    margin:0;
+    margin:auto;
     display: grid;
 }
 .gridItem{

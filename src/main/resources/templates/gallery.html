@@ -7,22 +7,23 @@
     <title>Title</title>
 </head>
 <body>
-<h3 class="title">Amazon't</h3>
-<p class="subText">Just a regular store</p>
-<form method="GET" action="/createAccount">
-    <button type="submit" class="createAccount">Create Account</button>
-</form>
-<form method="GET" action="/login" >
-    <button type="submit" class="login">Login</button>
-</form>
-<div class="container">
-    <br>
-    <br>
-    <div class="gridContainer">
-        <div class="gridItem" th:each="product : ${products}">
-            <p th:text="${product.name}"></p>
+    <h3 class="title">Amazon't</h3>
+    <p class="subText">Just a regular store</p>
+    <form method="GET" action="/createAccount">
+        <button type="submit" class="createAccount">Create Account</button>
+    </form>
+    <form method="GET" action="/login" >
+        <button type="submit" class="login">Login</button>
+    </form>
+    <div class="container">
+        <br>
+        <br>
+        <div class="gridContainer">
+            <div class="gridItem" th:each="product : ${products}">
+                <p th:text="${product.name}"></p>
+                <p th:text="${product.price}"></p>
+            </div>
         </div>
     </div>
-</div>
-</div>
+    </div>
 </body>

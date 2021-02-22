@@ -15,14 +15,18 @@ public class MainController {
 
     @GetMapping("/")
     public String gallery(Model model){
-        productList.add(new Product(1,12,"Kealan"));
-        productList.add(new Product(2,0,"Lukas"));
-        productList.add(new Product(3, 1, "Gerard"));
+        productList.add(new Product(1,12,"Kealan", "test"));
+        productList.add(new Product(2,0,"Lukas", "test1"));
+        productList.add(new Product(3, 1, "Gerard", "test3"));
 
         model.addAttribute("products", productList);
         return "gallery.html";
     }
 
+    @GetMapping("/createAccount")
+    public String createAccountRedirect(){
+        return "accountcreation.html";
+    }
     @GetMapping("/cart")
     public String cart(){
         return "cart.html";
