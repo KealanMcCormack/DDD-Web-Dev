@@ -12,6 +12,7 @@ public class MainController {
 
     ArrayList<Product> productList = new ArrayList<>();
     ArrayList<Customer> customerList = new ArrayList<>();
+    ArrayList<Owner> ownerList = new ArrayList<>();
 
     @GetMapping("/")
     public String gallery(Model model){
@@ -35,7 +36,13 @@ public class MainController {
     @GetMapping("/login")
     public String login(Model model){
 
-       model.addAttribute("customers", customerList);
+        if(model instanceof Owner){
+            model.addAttribute("owners", ownerList);
+        }
+        else{
+            model.addAttribute("customers", customerList);
+        }
+
         return "login.html";
     }
 }
