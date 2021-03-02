@@ -1,5 +1,6 @@
 package app;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,9 @@ public class MainController {
     ArrayList<Product> productList = new ArrayList<>();
     ArrayList<Customer> customerList = new ArrayList<>();
     ArrayList<Owner> ownerList = new ArrayList<>();
+
+    @Autowired
+    private ProductRepository productRepository;
 
     @GetMapping("/")
     public String gallery(Model model){
