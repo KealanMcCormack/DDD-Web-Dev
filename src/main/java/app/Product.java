@@ -2,10 +2,24 @@ package app;
 
 import org.springframework.stereotype.Component;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="product")
 public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
+    @Column
     int price;
+
+    @Column
     String name;
+
+    @Column
     String description;
     public Product(){
 
