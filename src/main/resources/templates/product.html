@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/" lang="en">
+<!--/@thymesVar id="product" type="app.Product"/-->
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/product.css">
+    <link rel="stylesheet" href="/product.css">
     <title>Product page</title>
 </head>
 <body>
@@ -12,19 +13,19 @@
 
     <div>
         <!-- image path needs to be held in array -->
-        <p class="productImage"><img src="../static/images/logo.jpg" alt="l"/></p>
+        <p class="productImage"><img src="/images/logo.jpg" alt="l"/></p>
     </div>
 
     <div>
         <!-- Use spring boot to grab product name -->
         <p>Product: </p>
-        <p th:text="product.name">Placeholder Product Name</p>
+        <p th:text="${product.name}">Placeholder Product Name</p>
     </div>
 
     <div>
         <!-- Use spring boot to grab product description -->
         <p>Description: </p>
-        <p th:text="product.description">Placeholder Description</p>
+        <p th:text="${product.description}">Placeholder Description</p>
     </div>
 
     <div>
@@ -32,7 +33,7 @@
             <button type="submit" class="back">Return To Gallery</button>
         </form>
         <!-- Use spring boot to send person id and product id to server -->
-        <form method="post" action="">
+        <form method="POST" action="">
             <button type="submit" class="addToCart">Add to Cart</button>
         </form>
     </div>

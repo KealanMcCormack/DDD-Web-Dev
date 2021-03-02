@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/" lang="en">
-<!--/@thymesVar id="products" type="java.util.ArrayList<app.Product>"/-->
+<!--/@thymesVar id="products" type="java.util.Map<java.lang.Integer, app.Product>"/-->
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/gallery.css">
@@ -19,10 +19,10 @@
         <br>
         <br>
         <div class="gridContainer">
-            <div class="gridItem" th:each="product : ${products}">
-                <p th:text="${product.name}"></p>
-                <p th:text="${product.price}"></p>
-                <a class="viewProductButton" th:href="'/product/'+${product.id}">View</a>
+            <div class="gridItem" th:each="kv : ${products}">
+                <p th:text="${kv.value.name}"></p>
+                <p th:text="${kv.value.price}"></p>
+                <a class="viewProductButton" th:href="'/product/'+${kv.value.id}">View</a>
             </div>
         </div>
     </div>
