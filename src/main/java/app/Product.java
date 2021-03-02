@@ -1,8 +1,5 @@
 package app;
 
-import org.springframework.stereotype.Component;
-
-
 import javax.persistence.*;
 
 @Entity
@@ -21,9 +18,11 @@ public class Product {
 
     @Column
     String description;
+
     public Product(){
 
     }
+
     public Product(int id, int price, String name, String description) {
         this.id = id;
         this.price = price;

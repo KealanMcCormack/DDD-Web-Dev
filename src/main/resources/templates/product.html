@@ -3,7 +3,7 @@
 <!--/@thymesVar id="product" type="app.Product"/-->
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/product.css">
+    <link rel="stylesheet" href="../static/product.css">
     <title>Product page</title>
 </head>
 <body>
@@ -16,16 +16,16 @@
         <p class="productImage"><img src="/images/logo.jpg" alt="l"/></p>
     </div>
 
-    <div>
+    <div class="pageText">
         <!-- Use spring boot to grab product name -->
         <p>Product: </p>
-        <p th:text="${product.name}">Placeholder Product Name</p>
+        <p th:text="${product.name}" class="center">Placeholder Product Name</p>
     </div>
 
-    <div>
+    <div class="pageText">
         <!-- Use spring boot to grab product description -->
         <p>Description: </p>
-        <p th:text="${product.description}">Placeholder Description</p>
+        <p th:text="${product.description}" class="center">Placeholder Description</p>
     </div>
 
     <div>

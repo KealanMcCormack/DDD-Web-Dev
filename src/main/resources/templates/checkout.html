@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/" lang="en">
+<!--/@thymesVar id="product" type="java.util.List<app.Product>"/-->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,21 +13,35 @@
     <h3 class="title">Amazon't</h3>
     <p class="subText">bottom text</p>
 
-    <div class="sideAds">
-        <p class="leftAdImage"><img src="../static/images/funkymonkey.png" alt="l"/></p>
+    <!-- List items from shopping cart, provide payment button. Card input? -->
+
+    <div>
+        <table id="phones">
+            <thead>
+            <tr>
+                <th class="subText">Checkout</th>
+                <th class="underscore"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item : ${product}" th:id="|row_${item.id}|">
+                <td th:text="${item.type}"></td>
+                <!-- Number of the item -->
+                <td><button th:onclick="|removeItem(${item.id})|">Remove</button></td>
+            </tr>
+            </tbody>
+        </table>
+
     </div>
 
-    <div class="middleBody">
-        <p class="transactionImage"><img src="../static/images/funkymonkey.png" alt="l"/></p>
-        <p class="message">You've been epically pwned. Thanks for your card details</p>
-
+    <div>
         <form method="get" action="/">
             <button type="submit" class="back">Return To Gallery</button>
         </form>
-    </div>
 
-    <div class="sideAds">
-        <p class="rightAdImage"><img src="../static/images/funkymonkey.png" alt="l"/></p>
+        <form method="POST" action="">
+            <button type="submit" class="Buy Now">Add to Cart</button>
+        </form>
     </div>
 </div>
 </body>
