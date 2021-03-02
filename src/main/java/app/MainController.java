@@ -20,6 +20,9 @@ public class MainController {
     ArrayList<Customer> customerList = new ArrayList<>();
     ArrayList<Owner> ownerList = new ArrayList<>();
 
+    Customer loggedInCustomer = null;
+
+
     @Autowired
     private ProductRepository productRepository;
 
