@@ -14,12 +14,13 @@
     <p class="subText">bottom text</p>
 
     <!-- List items from shopping cart, provide payment button. Card input? -->
+    <p class="subTitle">Checkout</p>
 
-    <div>
-        <table id="phones">
+    <div class="center">
+        <table id="Items">
             <thead>
             <tr>
-                <th class="subText">Checkout</th>
+                <th class="subText">Items in Cart</th>
                 <th class="underscore"></th>
             </tr>
             </thead>
@@ -27,7 +28,7 @@
             <tr th:each="item : ${product}" th:id="|row_${item.id}|">
                 <td th:text="${item.type}"></td>
                 <!-- Number of the item -->
-                <td><button th:onclick="|removeItem(${item.id})|">Remove</button></td>
+                <td><button th:onclick="|removeItem(${item.id})|" class="remove">Remove</button></td>
             </tr>
             </tbody>
         </table>
@@ -40,7 +41,7 @@
         </form>
 
         <form method="POST" action="">
-            <button type="submit" class="Buy Now">Add to Cart</button>
+            <button type="submit" class="buyNow">Buy Now</button>
         </form>
     </div>
 </div>
