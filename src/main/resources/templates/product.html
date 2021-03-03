@@ -3,8 +3,8 @@
 <!--/@thymesVar id="product" type="app.Product"/-->
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/product.css">
-    <title>Product page</title>
+    <link rel="stylesheet" href="/product.css">
+    <title th:text="${product.name}"></title>
 </head>
 <body>
 <div class="container">
@@ -13,7 +13,7 @@
 
     <div>
         <!-- image path needs to be held in array -->
-        <p class="productImage"><img src="/images/logo.jpg" alt="l"/></p>
+<!--        <p class="productImage"><img src="/images/logo.jpg" alt="l"/></p>-->
     </div>
 
     <div class="pageText">

@@ -66,7 +66,6 @@ public class MainController {
         if(selectedProduct == null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "product not found");
         }
-        System.out.println(selectedProduct.toString());
         model.addAttribute("product", selectedProduct);
         return "product.html";
     }

@@ -33,6 +33,10 @@ html{
     padding-left: 100px;
     color: #75ABBC;
 }
+.pageText p{
+    font-style: italic;
+    text-decoration: underline;
+}
 
 .back {
     position: absolute;
@@ -57,7 +61,7 @@ html{
 
 .center {
     left: 50%;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .productImage {
