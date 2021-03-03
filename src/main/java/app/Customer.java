@@ -1,11 +1,26 @@
 package app;
 
+import java.util.ArrayList;
+
 public class Customer {
 
     String username;
     private String password;
     int customerId;
 
+    public ArrayList<Product> getCart() {
+        return cart;
+    }
+
+    public void setCart(ArrayList<Product> cart) {
+        this.cart = cart;
+    }
+
+    private ArrayList<Product> cart = new ArrayList<>();
+
+    public void addToCart(Product product){
+        cart.add(product);
+    }
     public Customer(){
 
     }
