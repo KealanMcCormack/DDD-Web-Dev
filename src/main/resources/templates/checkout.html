@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/" lang="en">
-<!--/@thymesVar id="product" type="java.util.List<app.Product>"/-->
+<!--/@thymesVar id="customer" type="java.util.List<app.Customer>"/-->
 
 <html lang="en">
 <head>
@@ -25,9 +25,9 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="item : ${product}" th:id="|row_${item.id}|">
+            <tr th:each="item : ${customer.kart}" th:id="|row_${item.id}|">
                 <td th:text="${item.type}"></td>
-                <!-- Number of the item -->
+                <!-- Number of the item and price should be included-->
                 <td><button th:onclick="|removeItem(${item.id})|" class="remove">Remove</button></td>
             </tr>
             </tbody>

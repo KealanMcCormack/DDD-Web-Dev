@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -71,4 +70,15 @@ public class MainController {
         model.addAttribute("product", selectedProduct);
         return "product.html";
     }
+
+    @GetMapping("/checkout/{id}")
+    public String checkoutView(Model model, @PathVariable("id") int id){
+        Customer customer = customerList.get(id);
+        if(customer == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "customer not found");
+        }
+        model.addAttribute("customer", customer);
+        return "checkout.html";
+    }
+
 }
