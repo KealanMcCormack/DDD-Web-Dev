@@ -7,36 +7,36 @@
     <title th:text="${product.name}"></title>
 </head>
 <body>
-<div class="container">
-    <h3 class="title">Amazon't</h3>
-    <p class="subText">bottom text</p>
+    <div class="container">
+        <h3 class="title">Amazon't</h3>
+        <p class="subText">bottom text</p>
 
-    <div>
-        <!-- image path needs to be held in array -->
-<!--        <p class="productImage"><img src="/images/logo.jpg" alt="l"/></p>-->
-    </div>
+        <div>
+            <!-- image path needs to be held in array -->
+    <!--        <p class="productImage"><img src="/images/logo.jpg" alt="l"/></p>-->
+        </div>
 
-    <div class="pageText">
-        <!-- Use spring boot to grab product name -->
-        <p>Product: </p>
-        <p th:text="${product.name}" class="center">Placeholder Product Name</p>
-    </div>
+        <div class="pageText">
+            <!-- Use spring boot to grab product name -->
+            <p>Product: </p>
+            <p th:text="${product.name}" class="center">Placeholder Product Name</p>
+        </div>
 
-    <div class="pageText">
-        <!-- Use spring boot to grab product description -->
-        <p>Description: </p>
-        <p th:text="${product.description}" class="center">Placeholder Description</p>
-    </div>
+        <div class="pageText">
+            <!-- Use spring boot to grab product description -->
+            <p>Description: </p>
+            <p th:text="${product.description}" class="center">Placeholder Description</p>
+        </div>
 
-    <div>
-        <form method="get" action="/">
-            <button type="submit" class="back">Return To Gallery</button>
-        </form>
-        <!-- Use spring boot to send person id and product id to server -->
-        <form method="POST" action="">
-            <button type="submit" class="addToCart">Add to Cart</button>
-        </form>
+        <div>
+            <form method="get" action="/">
+                <button type="submit" class="back">Return To Gallery</button>
+            </form>
+            <!-- Use spring boot to send person id and product id to server -->
+            <form method="POST" action="/addToCart">
+                <button type="submit" class="addToCart">Add to Cart</button>
+            </form>
+        </div>
     </div>
-</div>
 </body>
 </html>
