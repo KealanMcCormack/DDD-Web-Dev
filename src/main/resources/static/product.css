@@ -34,6 +34,9 @@ html{
     color: #75ABBC;
 }
 .pageText p{
+
+}
+.pageText_title{
     font-style: italic;
     text-decoration: underline;
 }

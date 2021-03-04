@@ -4,11 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 @Controller
@@ -19,8 +17,7 @@ public class MainController {
     HashMap<Integer,Customer> customerList = new HashMap<>();
     HashMap<Integer,Owner> ownerList = new HashMap<>();
 
-    Customer loggedInCustomer = null;
-
+    Customer loggedInCustomer = new Customer();
 
     @Autowired
     private ProductRepository productRepository;
@@ -42,11 +39,18 @@ public class MainController {
     public String createAccountRedirect(){
         return "accountcreation.html";
     }
+
     @GetMapping("/cart")
     public String cart(){
         return "cart.html";
     }
 
+    @PostMapping("/cart/add")
+    public @ResponseBody String addToCart(@RequestBody int id){
+        System.out.println(id);
+        loggedInCustomer.addToCart(productList.get(id));
+        return "";
+    }
     @GetMapping("/customer/{id}")
     public String loginCustomer(Model model, @PathVariable("id") int id){
 
@@ -90,5 +94,11 @@ public class MainController {
         model.addAttribute("customer", customer);
         return "checkout.html";
     }
+    @GetMapping("/login")
+    public String loginRedirect(){
+        return "login.html";
+    }
+
+
 
 }
