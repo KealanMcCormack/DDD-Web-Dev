@@ -55,7 +55,7 @@ public class MainController {
         if(customer == null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Customer not found");
         }
-        model.addAttribute("customers", customerList);
+        model.addAttribute("customer", customerList);
 
         return "login.html";
     }
