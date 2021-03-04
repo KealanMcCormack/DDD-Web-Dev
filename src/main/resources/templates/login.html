@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/" lang="en">
 <!--/@thymesVar id="owners" type="java.util.Map<java.lang.Integer, app.Owner>"/-->
-<!--/@thymesVar id="customers" type="java.util.Map<java.lang.Integer, app.Customer>"/-->
+<!--/@thymesVar id="customer" type="java.util.Map<java.lang.Integer, app.Customer>"/-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/login.css">
+    <link rel="stylesheet" href="/login.css">
     <title>login</title>
 </head>
 <body>
@@ -44,14 +44,14 @@
 
     </table>
 
-<div class="buttonCustomer" th:each="kv : ${customers}">
+<div class="buttonCustomer" th:each="kv : ${customer}">
 
     <a class="loginPageButton" th:href="'/customer/'+${kv.value.id}">Login</a>
 
 </div>
 
 
-<div class="buttonOwner" th:each="kv : ${owners}">
+<div class="buttonOwner" th:each="kv : ${owner}">
 
   <a class="loginOwnerButton" th:href="'/owner/'+${kv.value.id}">Login as Owner</a>
 
