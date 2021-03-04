@@ -16,8 +16,8 @@ public class MainController {
 
     Integer productID = 0;
     HashMap<Integer, Product> productList = new HashMap<>();
-    ArrayList<Customer> customerList = new ArrayList<>();
-    ArrayList<Owner> ownerList = new ArrayList<>();
+    HashMap<Integer,Customer> customerList = new HashMap<>();
+    HashMap<Integer,Owner> ownerList = new HashMap<>();
 
     Customer loggedInCustomer = null;
 
@@ -47,16 +47,27 @@ public class MainController {
         return "cart.html";
     }
 
-    @GetMapping("/login")
-    public String login(Model model){
+    @GetMapping("/customer/{id}")
+    public String loginCustomer(Model model, @PathVariable("id") int id){
 
-        if(model instanceof Owner){
-            model.addAttribute("owners", ownerList);
-        }
-        else{
-            model.addAttribute("customers", customerList);
-        }
+        Customer customer = customerList.get(id);
 
+        if(customer == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Customer not found");
+        }
+        model.addAttribute("customers", customerList);
+
+        return "login.html";
+    }
+
+    @GetMapping("/owner/{id}")
+    public String loginOwner(Model model, @PathVariable("id") int id){
+
+        Owner owner = ownerList.get(id);
+        if(owner == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Owner not found");
+        }
+        model.addAttribute("owner", owner);
         return "login.html";
     }
 
