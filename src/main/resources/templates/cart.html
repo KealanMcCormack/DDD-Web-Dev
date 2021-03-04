@@ -1,8 +1,11 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/" lang="en">
+<!--/@thymesVar id="cart" type="java.util.ArrayList<app.Product>"/-->
+<!--/@thymesVar id="customer" type="java.util.Map<java.lang.Integer, app.Customer>"/-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/cart.css">
+    <link rel="stylesheet" href="/cart.css">
     <title>cart</title>
 </head>
 <body>
@@ -32,10 +35,9 @@
             </th>
         </tr>
 
-        <tr>
-            <td>
-
-            </td>
+        <tr class="cartItems" th:each="cart : ${products}">
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
         </tr>
 
         <tr>
@@ -48,9 +50,9 @@
 
     </table>
 
-    <form method="GET" action="/checkout">
-        <button type="submit" class="cartBuyButton">Buy</button>
-    </form>
+    <div class="buttonCart" th:each="kv : ${customer}">
+        <a class="cartBuyButton" th:href="'/checkout/'+${kv.value.id}">Buy</a>
+    </div>
 
 </div>
 
