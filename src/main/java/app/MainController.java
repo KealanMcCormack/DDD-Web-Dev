@@ -13,9 +13,11 @@ import java.util.HashMap;
 public class MainController {
 
     Integer productID = 0;
+    int customerID = 0;
+    int ownerID = 0;
     HashMap<Integer, Product> productList = new HashMap<>();
-    HashMap<Integer,Customer> customerList = new HashMap<>();
-    HashMap<Integer,Owner> ownerList = new HashMap<>();
+    HashMap<String,Customer> customerList = new HashMap<>(); // Key = username
+    HashMap<String,Owner> ownerList = new HashMap<>(); // Key = username
 
     Customer loggedInCustomer = new Customer();
 
@@ -40,8 +42,33 @@ public class MainController {
         return "accountcreation.html";
     }
 
+    //Creates Customer Account
+    @PostMapping("/createCustomer")
+    public @ResponseBody String createCustomer(@RequestBody String username, @RequestBody String password){
+        if(customerList.get(username) == null){ //If account doesnt already exist
+            Customer newCustomer = new Customer(username, password, customerID);
+            customerID++;
+            customerList.put(username, newCustomer);
+            return "Success";
+        }else{
+            return "Fail";
+        }
+    }
+
+    @PostMapping("/createOwner")
+    public @ResponseBody String createOwner(@RequestBody String username, @RequestBody String password){
+        if(ownerList.get(username) == null){ //If account doesnt already exist
+            Owner newOwner = new Owner(username, password, ownerID);
+            ownerID++;
+            ownerList.put(username, newOwner);
+            return "Success";
+        }else{
+            return "Fail";
+        }
+    }
     @GetMapping("/cart")
-    public String cart(){
+    public String cart(Model model){
+        model.addAttribute(loggedInCustomer.getCart());
         return "cart.html";
     }
 

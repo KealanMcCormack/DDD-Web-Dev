@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/accountcreation.css">
+    <script type="text/javascript" src="/createaccount.js"></script>
     <title>Account Creation</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
 </form>
 
 
-<form method="POST" action="/accountcreation">
+<form>
     <h3 class="loginText">Create an account</h3>
 
     <table class="loginTable">
@@ -27,7 +28,7 @@
             </th>
 
             <td>
-                <input type="text" class="loginBox" name="username">
+                <input type="text" class="loginBoxUsername" name="username">
             </td>
         </tr>
 
@@ -43,7 +44,8 @@
 
     </table>
 
-    <button type="submit" class="loginPageButton">Login</button>
+    <button type="submit" class="loginPageButton" onclick="createCustomer()">Create Customer Account</button>
+    <button type="submit" class="loginPageButton" onclick="createOwner()">Create Owner Account</button>
 
 </form>
 

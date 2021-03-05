@@ -42,6 +42,9 @@ html{
 .loginBox{
     width: 250px;
 }
+.loginBoxUsername{
+    width: 250px;
+}
 
 .loginPageButton{
     margin: 0;

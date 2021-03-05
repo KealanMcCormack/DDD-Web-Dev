@@ -3,7 +3,7 @@
 - D grade
     - [x] View Products (Gallery) - **Gerard**
     - [x] View details about product (product page) - **Gerard**
-    - [ ] Go to the checkout to purchase orders in their shopping cart.
+    - [ ] Link gallery to cart and cart to checkout
     - [ ] Owner login through same page as customer
     - [ ] Owner add product to shop
 - C grade
