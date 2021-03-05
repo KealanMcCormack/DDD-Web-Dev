@@ -24,6 +24,12 @@ public class MainController {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    @Autowired
+    private OwnerRepository ownerRepository;
+
     @GetMapping("/")
     public String gallery(Model model){
         productList.put(productID, new Product(productID,12,"Kealan", "test"));
@@ -45,7 +51,7 @@ public class MainController {
     //Creates Customer Account
     @PostMapping("/createCustomer")
     public @ResponseBody String createCustomer(@RequestBody String username, @RequestBody String password){
-        if(customerList.get(username) == null){ //If account doesnt already exist
+        if(customerRepository.getOne(username) == null){ //If account doesnt already exist
             Customer newCustomer = new Customer(username, password, customerID);
             customerID++;
             customerList.put(username, newCustomer);
@@ -55,6 +61,7 @@ public class MainController {
         }
     }
 
+    //Creates Owner Account
     @PostMapping("/createOwner")
     public @ResponseBody String createOwner(@RequestBody String username, @RequestBody String password){
         if(ownerList.get(username) == null){ //If account doesnt already exist

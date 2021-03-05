@@ -1,11 +1,22 @@
 package app;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.ArrayList;
 
+@Entity
+@Table(name="customer")
 public class Customer {
 
+    @Id
     String username;
+
+    @Column
     private String password;
+
+    @Column
     int customerId;
 
     public ArrayList<Product> getCart() {

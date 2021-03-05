@@ -1,9 +1,21 @@
 package app;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="owner")
 public class Owner {
 
+    @Id
     String username;
+
+    @Column
     private String password;
+
+    @Column
     int ownerId;
 
     public Owner(){

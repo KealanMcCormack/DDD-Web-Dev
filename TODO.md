@@ -4,7 +4,7 @@
     - [x] View Products (Gallery) - **Gerard**
     - [x] View details about product (product page) - **Gerard**
     - [ ] Link gallery to cart and cart to checkout
-    - [ ] Owner login through same page as customer
+    - [x] Owner login through same page as customer
     - [ ] Owner add product to shop
 - C grade
     - [x] Add product to cart
@@ -18,7 +18,7 @@
 - B grade
     - [ ] Search for product
     - [x] Create customer account
-        - [ ] save login details
+        - [x] save login details
     - [x] Login to customer account
     - [ ] Customer order history (need account page)
     - [ ] Owners view all orders
