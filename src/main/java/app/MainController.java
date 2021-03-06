@@ -146,6 +146,7 @@ public class MainController {
     @GetMapping("/paid")
     public String paymentReceived() { return "paymentPage.html"; }
 
-
+    @GetMapping("/cardDetails")
+    public String cardDetailsView() { return "cardDetails.html"; }
 
 }
