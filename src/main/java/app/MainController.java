@@ -126,6 +126,7 @@ public class MainController {
         return "product.html";
     }
 
+    // Generates checkout for specific customer
     @GetMapping("/checkout/{id}")
     public String checkoutView(Model model, @PathVariable("username") String username){
         Customer customer = customerRepository.getOne(username);
@@ -135,10 +136,15 @@ public class MainController {
         model.addAttribute("customer", customer);
         return "checkout.html";
     }
+
     @GetMapping("/login")
     public String loginRedirect(){
         return "login.html";
     }
+
+    // Generates Payment Page
+    @GetMapping("/paid")
+    public String paymentReceived() { return "paymentPage.html"; }
 
 
 

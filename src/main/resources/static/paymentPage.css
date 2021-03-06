@@ -1,0 +1,56 @@
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:auto;
+}
+.subText{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    margin: auto;
+    padding-bottom: 10px;
+    border-bottom: 2.5px solid black;
+}
+
+.container{
+    height: 1000px;
+    width: 1200px;
+    position: relative;
+}
+
+.sideAds img {
+    width: 75px;
+    height: 600px;
+}
+
+.leftAdImage {
+    position: absolute;
+    left: 0%;
+    height: 10%;
+}
+
+.rightAdImage {
+    position: absolute;
+    left: 98%;
+    height: 10%;
+}
+
+.middleBody {
+    left: 10%;
+    position: absolute;
+    width: 80%;
+    height: 600px;
+    text-align: center;
+}
+
+.middleBody img{
+    left: 20%;
+    width: 80%;
+    height: 400px;
+}
+
+.back {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(#353535, cornflowerblue);
+    color: white;
+    border-radius: 4px;
+}
