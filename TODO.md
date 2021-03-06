@@ -5,7 +5,7 @@
     - [x] View details about product (product page) - **Gerard**
     - [ ] Link gallery to cart and cart to checkout
     - [x] Owner login through same page as customer
-    - [ ] Owner add product to shop
+    - [ ] Owner add product to shop (make owner page)
 - C grade
     - [x] Add product to cart
     - [ ] Cart Page

@@ -51,7 +51,7 @@
     </table>
 
     <div class="buttonCart" th:each="kv : ${customer}">
-        <a class="cartBuyButton" th:href="'/checkout/'+${kv.value.id}">Buy</a>
+        <a class="cartBuyButton" th:href="'/checkout/'+${kv.value.username}">Buy</a>
     </div>
 
 </div>

@@ -46,14 +46,14 @@
 
 <div class="buttonCustomer" th:each="kv : ${customer}">
 
-    <a class="loginPageButton" th:href="'/customer/'+${kv.value.id}">Login</a>
+    <a class="loginPageButton" th:href="'/customer/'+${kv.value.username}">Login</a>
 
 </div>
 
 
 <div class="buttonOwner" th:each="kv : ${owner}">
 
-  <a class="loginOwnerButton" th:href="'/owner/'+${kv.value.id}">Login as Owner</a>
+  <a class="loginOwnerButton" th:href="'/owner/'+${kv.value.username}">Login as Owner</a>
 
 </div>
 
