@@ -23,3 +23,8 @@
     - [ ] Customer order history (need account page)
     - [ ] Owners view all orders
     - [ ] Change the state of orders
+- A grade (pick one of these)
+    - [ ] JS AOS (animate on scroll)
+    - [ ] Stripe implementation
+    - [ ] JS anime (animation framework) 
+    
