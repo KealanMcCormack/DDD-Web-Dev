@@ -91,6 +91,7 @@ public class MainController {
         return "";
     }
 
+    //Login as customer
     @GetMapping("/customer/{id}")
     public String loginCustomer(Model model, @PathVariable("username") String username){
 
@@ -104,6 +105,7 @@ public class MainController {
         return "login.html";
     }
 
+    //Login as owner
     @GetMapping("/owner/{username}")
     public String loginOwner(Model model, @PathVariable("username") String username){
 
