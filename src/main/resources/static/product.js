@@ -1,5 +1,4 @@
 function addToCart(id){
-    console.log("in js")
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/cart/add");
     xhr.setRequestHeader("Content-type", "application/json");

@@ -15,11 +15,11 @@ public class MainController {
     Integer productID = 0;
     int customerID = 0;
     int ownerID = 0;
-    HashMap<Integer, Product> productList = new HashMap<>();
-    HashMap<String,Customer> customerList = new HashMap<>(); // Key = username
-    HashMap<String,Owner> ownerList = new HashMap<>(); // Key = username
+//    HashMap<Integer, Product> productList = new HashMap<>();
+//    HashMap<String,Customer> customerList = new HashMap<>(); // Key = username
+//    HashMap<String,Owner> ownerList = new HashMap<>(); // Key = username
 
-    Customer loggedInCustomer = new Customer();
+    Customer loggedInCustomer = null;
 
     @Autowired
     private ProductRepository productRepository;
@@ -66,7 +66,7 @@ public class MainController {
     //Creates Owner Account
     @PostMapping("/createOwner")
     public @ResponseBody String createOwner(@RequestBody String username, @RequestBody String password){
-        if(ownerList.get(username) == null){ //If account doesnt already exist
+        if(ownerRepository.getOne(username) == null){ //If account doesnt already exist
             Owner newOwner = new Owner(username, password, ownerID);
             ownerID++;
             ownerRepository.save(newOwner);
@@ -100,7 +100,7 @@ public class MainController {
         if(customer == null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Customer not found");
         }
-        model.addAttribute("customer", customerList);
+        loggedInCustomer = customer;
 
         return "login.html";
     }

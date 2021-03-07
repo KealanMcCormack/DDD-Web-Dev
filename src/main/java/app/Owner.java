@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="owner")
-public class Owner {
+public class Owner extends Customer {
 
     @Id
     String username;
