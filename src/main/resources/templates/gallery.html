@@ -15,14 +15,17 @@
     <form method="GET" action="/login" >
         <button type="submit" class="login">Login</button>
     </form>
+    <form method="GET" action="/cart">
+        <button type="submit" class="cartButton">Cart</button>
+    </form>
     <div class="container">
         <br>
         <br>
         <div class="gridContainer">
-            <div class="gridItem" th:each="kv : ${products}">
-                <p th:text="${kv.value.name}"></p>
-                <p th:text="${kv.value.price}"></p>
-                <a class="viewProductButton" th:href="'/product/'+${kv.value.id}">View</a>
+            <div class="gridItem" th:each="product : ${products}">
+                <p th:text="${product.name}"></p>
+                <p th:text="${product.price}"></p>
+                <a class="viewProductButton" th:href="'/product/'+${product.id}">View</a>
             </div>
         </div>
     </div>

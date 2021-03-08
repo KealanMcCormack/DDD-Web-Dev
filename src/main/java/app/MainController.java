@@ -20,7 +20,6 @@ public class MainController {
 //    HashMap<String,Owner> ownerList = new HashMap<>(); // Key = username
 
     Customer loggedInCustomer = null;
-
     @Autowired
     private ProductRepository productRepository;
 
@@ -53,33 +52,25 @@ public class MainController {
     //Creates Customer Account
     @PostMapping("/createCustomer")
     public @ResponseBody String createCustomer(@RequestBody String username, @RequestBody String password){
-        if(customerRepository.getOne(username) == null){ //If account doesnt already exist
             Customer newCustomer = new Customer(username, password, customerID);
             customerID++;
             customerRepository.save(newCustomer);
             return "Success";
-        }else{
-            return "Fail";
-        }
     }
 
     //Creates Owner Account
     @PostMapping("/createOwner")
     public @ResponseBody String createOwner(@RequestBody String username, @RequestBody String password){
-        if(ownerRepository.getOne(username) == null){ //If account doesnt already exist
-            Owner newOwner = new Owner(username, password, ownerID);
-            ownerID++;
-            ownerRepository.save(newOwner);
-            return "Success";
-        }else{
-            return "Fail";
-        }
+        Owner newOwner = new Owner(username, password, ownerID);
+        ownerID++;
+        ownerRepository.save(newOwner);
+        return "Success";
     }
 
     //Loads cart page
     @GetMapping("/cart")
     public String cart(Model model){
-        model.addAttribute(loggedInCustomer.getCart());
+        //model.addAttribute(loggedInCustomer.getCart());
         return "cart.html";
     }
 
@@ -96,12 +87,7 @@ public class MainController {
     public String loginCustomer(Model model, @PathVariable("username") String username){
 
         Customer customer = customerRepository.getOne(username);
-
-        if(customer == null){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Customer not found");
-        }
         loggedInCustomer = customer;
-
         return "login.html";
     }
 
@@ -110,9 +96,6 @@ public class MainController {
     public String loginOwner(Model model, @PathVariable("username") String username){
 
         Owner owner = ownerRepository.getOne(username);
-        if(owner == null){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Owner not found");
-        }
         model.addAttribute("owner", owner);
         return "login.html";
     }
@@ -121,9 +104,6 @@ public class MainController {
     @GetMapping("/product/{id}")
     public String productView(Model model, @PathVariable("id") int id){
         Product selectedProduct = productRepository.getOne(id);
-        if(selectedProduct == null){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "product not found");
-        }
         model.addAttribute("product", selectedProduct);
         return "product.html";
     }
