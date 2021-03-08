@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/" lang="en">
-<!--/@thymesVar id="owners" type="java.util.Map<java.lang.Integer, app.Owner>"/-->
-<!--/@thymesVar id="customer" type="java.util.Map<java.lang.Integer, app.Customer>"/-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +26,7 @@
             </th>
 
             <td>
-                <input type="text" class="loginBox" name="usernameBox">
+                <input type="text" id="loginBox" name="usernameBox">
             </td>
         </tr>
 
@@ -38,23 +36,19 @@
             </th>
 
             <td>
-                <input type="password" class="loginBox" name="passwordBox">
+                <input type="password" id="loginBoxPassword" name="passwordBox">
             </td>
         </tr>
 
     </table>
 
-<div class="buttonCustomer" th:each="kv : ${customer}">
-
-    <a class="loginPageButton" th:href="'/customer/'+${kv.value.username}">Login</a>
-
+<div class="buttonCustomer">
+    <button onclick="customerLogin()">Login as customer</button>
 </div>
 
 
-<div class="buttonOwner" th:each="kv : ${owner}">
-
-  <a class="loginOwnerButton" th:href="'/owner/'+${kv.value.username}">Login as Owner</a>
-
+<div class="buttonOwner">
+  <button onclick="ownerLogin()">Login as owner</button>
 </div>
 
 </body>

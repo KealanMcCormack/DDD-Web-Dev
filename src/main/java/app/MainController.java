@@ -73,24 +73,33 @@ public class MainController {
     @PostMapping("/cart/add")
     public @ResponseBody String addToCart(@RequestBody int id){
         System.out.println(id);
-        loggedInCustomer.addToCart(productRepository.getOne(id));
-        return "";
+        Product newProduct = productRepository.getOne(id);
+        System.out.println(newProduct);
+        loggedInCustomer.addToCart(newProduct);
+        return " ";
     }
 
     //Login as customer
-    @GetMapping("/customer/{id}")
-    public String loginCustomer(Model model, @PathVariable("username") String username){
-
-        Customer customer = customerRepository.getOne(username);
-        loggedInCustomer = customer;
+    @GetMapping("/customerLogin")
+    public String loginCustomer(Customer userEntered){
+        Customer repoCustomer = customerRepository.getOne(userEntered.getUsername());
+        if(repoCustomer.getPassword() == userEntered.getPassword()){
+            loggedInCustomer = repoCustomer;
+        }else{
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Password not correct :(");
+        }
         return "login.html";
     }
 
     //Login as owner
-    @GetMapping("/owner/{username}")
-    public String loginOwner(Model model, @PathVariable("username") String username){
-        Owner owner = ownerRepository.getOne(username);
-        model.addAttribute("owner", owner);
+    @GetMapping("/ownerLogin")
+    public String loginOwner(Owner ownerEntered){
+        Owner repoOwner = ownerRepository.getOne(ownerEntered.getUsername());
+        if(repoOwner.getPassword() == ownerEntered.getPassword()){
+            loggedInCustomer = repoOwner;
+        }else{
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Password not correct :(");
+        }
         return "login.html";
     }
 
@@ -114,7 +123,9 @@ public class MainController {
     }
 
     @GetMapping("/login")
-    public String loginRedirect(){
+    public String loginRedirect(Model model){
+        model.addAttribute("owners", ownerRepository.findAll());
+        model.addAttribute("customers", customerRepository.findAll());
         return "login.html";
     }
 

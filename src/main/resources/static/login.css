@@ -40,10 +40,12 @@ html{
     color: #75ABBC;
 }
 
-.loginBox{
+#loginBox{
     width: 250px;
 }
-
+#loginBoxPassword{
+    width: 250px;
+}
 .loginPageButton{
     margin: 0;
     position: absolute;
