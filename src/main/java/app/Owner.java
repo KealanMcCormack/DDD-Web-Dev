@@ -1,9 +1,6 @@
 package app;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="owner")
@@ -16,16 +13,17 @@ public class Owner extends Customer {
     private String password;
 
     @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int ownerId;
 
     public Owner(){
 
     }
 
-    public Owner(String username, String password, int ownerId){
+    public Owner(String username, String password){
+        super(username, password);
         this.username = username;
         this.password = password;
-        this.ownerId = ownerId;
     }
 
     public void setUsername(String username) { this.username = username; }
@@ -40,4 +38,12 @@ public class Owner extends Customer {
 
     public int getOwnerId() { return ownerId; }
 
+    @Override
+    public String toString() {
+        return "Owner{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", ownerId=" + ownerId +
+                '}';
+    }
 }

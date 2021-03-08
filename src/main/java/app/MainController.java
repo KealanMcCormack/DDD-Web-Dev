@@ -33,12 +33,9 @@ public class MainController {
     public String gallery(Model model){
 
         /*These are just for testing purposes*/
-        productRepository.save(new Product(productID,12,"Kealan", "test"));
-        productID++;
-        productRepository.save(new Product(productID,2,"Lukas", "test1"));
-        productID++;
-        productRepository.save(new Product(productID, 1, "Gerard", "test3"));
-        productID++;
+        productRepository.save(new Product(12,"Kealan", "test"));
+        productRepository.save(new Product(2,"Lukas", "test1"));
+        productRepository.save(new Product( 1, "Gerard", "test3"));
 
         model.addAttribute("products", productRepository.findAll());
         return "gallery.html";
@@ -51,19 +48,17 @@ public class MainController {
 
     //Creates Customer Account
     @PostMapping("/createCustomer")
-    public @ResponseBody String createCustomer(@RequestBody String username, @RequestBody String password){
-            Customer newCustomer = new Customer(username, password, customerID);
-            customerID++;
+    public @ResponseBody String createCustomer(@RequestBody Customer newCustomer){
             customerRepository.save(newCustomer);
+            System.out.println(newCustomer.toString());
             return "Success";
     }
 
     //Creates Owner Account
     @PostMapping("/createOwner")
-    public @ResponseBody String createOwner(@RequestBody String username, @RequestBody String password){
-        Owner newOwner = new Owner(username, password, ownerID);
-        ownerID++;
+    public @ResponseBody String createOwner(@RequestBody Owner newOwner){
         ownerRepository.save(newOwner);
+        System.out.println(newOwner.toString());
         return "Success";
     }
 
@@ -94,7 +89,6 @@ public class MainController {
     //Login as owner
     @GetMapping("/owner/{username}")
     public String loginOwner(Model model, @PathVariable("username") String username){
-
         Owner owner = ownerRepository.getOne(username);
         model.addAttribute("owner", owner);
         return "login.html";

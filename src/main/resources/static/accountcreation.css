@@ -39,10 +39,10 @@ html{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.loginBox{
+#loginBox{
     width: 250px;
 }
-.loginBoxUsername{
+#loginBoxUsername{
     width: 250px;
 }
 

@@ -1,5 +1,7 @@
 package app;
 
+import org.hibernate.annotations.GeneratorType;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,7 @@ public class Customer {
     private String password;
 
     @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int customerId;
 
     public List<Product> getCart() {
@@ -36,10 +39,9 @@ public class Customer {
 
     }
 
-    public Customer(String username, String password, int customerId){
+    public Customer(String username, String password){
         this.username = username;
         this.password = password;
-        this.customerId = customerId;
     }
 
     public void setUsername(String username) {
@@ -64,5 +66,14 @@ public class Customer {
 
     public int getCustomerId() {
         return customerId;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", customerId=" + customerId +
+                '}';
     }
 }
