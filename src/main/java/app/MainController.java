@@ -33,9 +33,9 @@ public class MainController {
     public String gallery(Model model){
 
         /*These are just for testing purposes*/
-        productRepository.save(new Product(12,"Kealan", "test"));
-        productRepository.save(new Product(2,"Lukas", "test1"));
-        productRepository.save(new Product( 1, "Gerard", "test3"));
+        productRepository.save(new Product(12,"Kealan", "test", 1));
+        productRepository.save(new Product(2,"Lukas", "test1", 1));
+        productRepository.save(new Product( 1, "Gerard", "test3", 1));
 
         model.addAttribute("products", productRepository.findAll());
         return "gallery.html";
@@ -145,5 +145,7 @@ public class MainController {
         model.addAttribute("products", products);
         return "owner.html";
     }
+
+
 
 }
