@@ -76,4 +76,16 @@ public class Customer {
                 ", customerId=" + customerId +
                 '}';
     }
+
+    public int totalPrice(){
+
+        int total = 0;
+
+        for(int i = 0; i < cart.size(); i++){
+            total += getCart().get(i).getPrice();
+        }
+
+        return total;
+    }
+
 }
