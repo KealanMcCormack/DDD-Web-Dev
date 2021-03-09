@@ -146,6 +146,15 @@ public class MainController {
         return "owner.html";
     }
 
+    @GetMapping("/productCreation")
+    public String productCreationPage(){
+        return "productCreation.html";
+    }
+
+    @GetMapping("/addProduct")
+    public void addProduct(Product newAddition){
+        productRepository.save(newAddition);
+    }
 
 
 }
