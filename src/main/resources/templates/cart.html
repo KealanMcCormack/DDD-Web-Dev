@@ -37,12 +37,16 @@
         <tr class="cartItems" th:each="cart : ${products}">
             <td th:text="${product.name}"></td>
             <td th:text="${product.price}"></td>
+            <td>
+                <button class="removeButton" th:onclick="|removeProduct(${product.id})|">Remove</button>
+            </td>
+
         </tr>
 
         <tr>
             <td>
                 <p class="totalPrice">Total Price:</p>
-                <textarea readonly class="totalPriceBox" name="priceBox"></textarea>
+                <textarea readonly class="totalPriceBox" name="priceBox" th:text="|totalPrice(${customer.id})|"></textarea>
             </td>
 
         </tr>
