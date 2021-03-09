@@ -19,7 +19,7 @@ public class MainController {
 //    HashMap<String,Customer> customerList = new HashMap<>(); // Key = username
 //    HashMap<String,Owner> ownerList = new HashMap<>(); // Key = username
 
-    Customer loggedInCustomer = null;
+    Customer loggedInCustomer = new Customer("default", ""); //Creates default user
     @Autowired
     private ProductRepository productRepository;
 
@@ -124,8 +124,6 @@ public class MainController {
 
     @GetMapping("/login")
     public String loginRedirect(Model model){
-        model.addAttribute("owners", ownerRepository.findAll());
-        model.addAttribute("customers", customerRepository.findAll());
         return "login.html";
     }
 

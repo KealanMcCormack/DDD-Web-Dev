@@ -5,18 +5,19 @@
     - [x] View details about product (product page) - **Gerard**
     - [x] Link gallery to cart and cart to checkout
     - [x] Owner login through same page as customer
-    - [ ] Owner add product to shop (make owner page)
+    - [x] Owner add product to shop (make owner page)
 - C grade
     - [x] Add product to cart
-    - [ ] Cart Page
+    - [x] Cart Page
         - [x] Dynamic displaying of cart items
-        - [ ] Remove Product
+        - [x] Remove Product
     - [x] Checkout page
     - [ ] Owner page (link from gallery)
-        - [ ] Owners should be able to hide products
-        - [ ] Owners edit product details
+        - [x] Owners should be able to hide products
+        - [ ] Gallery hidden stuff ^^^^ - **Gerard**
+        - [x] Owners edit product details
 - B grade
-    - [ ] Search for product
+    - [ ] Search for product - **Gerard**
     - [x] Create customer account
         - [x] save login details
     - [x] Login to customer account
@@ -27,8 +28,3 @@
     - [ ] JS AOS (animate on scroll)
     - [ ] Stripe implementation
     - [ ] JS anime (animation framework)
- - Owner page     
-    - [ ] Add item
-    - [ ] Remove item
-    - [ ] Hide products
-    - [ ] Edit details of product
