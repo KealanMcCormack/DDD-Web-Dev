@@ -19,6 +19,9 @@ public class Product {
     @Column
     String description;
 
+    @Column
+    int ownerId;
+
     public Product(){
 
     }

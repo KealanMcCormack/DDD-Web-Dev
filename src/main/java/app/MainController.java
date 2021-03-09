@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.HashMap;
+import java.util.List;
 
 @Controller
 public class MainController {
@@ -135,5 +135,15 @@ public class MainController {
 
     @GetMapping("/cardDetails")
     public String cardDetailsView() { return "cardDetails.html"; }
+
+    @GetMapping("/owner/{id}")
+    public String ownerMainPage(Model model, @PathVariable("id") int id) {
+
+        List<Product> products =  productRepository.findAll();
+        products.removeIf(x -> x.ownerId != id);
+
+        model.addAttribute("products", products);
+        return "owner.html";
+    }
 
 }

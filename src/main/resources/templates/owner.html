@@ -1,10 +1,30 @@
-A<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/" lang="en">
+<!--/@thymesVar id="products" type="java.util.list<app.Product>"/-->
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <link rel="stylesheet" href="/gallery.css">
+    <title>Gallery</title>
 </head>
 <body>
-$END$
+<h3 class="title">Amazon't</h3>
+<p class="subText">Just a regular store</p>
+
+<form method="GET" action="/">
+    <button type="submit" class="Back">Back</button>
+</form>
+
+
+
+<div class="container">
+    <div class="gridContainer">
+        <div class="gridItem" th:each="product : ${products}">
+            <p th:text="${product.name}"></p>
+            <p th:text="${product.price}"></p>
+            <a class="viewProductButton" th:href="'/product/'+${product.id}">View product page</a>
+        </div>
+    </div>
+</div>
+</div>
 </body>
 </html>
