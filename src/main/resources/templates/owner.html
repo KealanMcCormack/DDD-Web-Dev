@@ -3,8 +3,9 @@
 <!--/@thymesVar id="products" type="java.util.list<app.Product>"/-->
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/gallery.css">
-    <title>Gallery</title>
+    <link rel="stylesheet" href="/owner.css">
+    <script type="text/javascript" src="owner.js"></script>
+    <title>Owner</title>
 </head>
 <body>
 <h3 class="title">Amazon't</h3>
@@ -21,7 +22,14 @@
         <div class="gridItem" th:each="product : ${products}">
             <p th:text="${product.name}"></p>
             <p th:text="${product.price}"></p>
-            <a class="viewProductButton" th:href="'/product/'+${product.id}">View</a>
+
+            <div class="buttonRemoveProduct">
+                <button onclick="removeProduct()">Remove product</button>
+            </div>
+            <button th:onclick="|removeProduct(${product.id})|">Remove</button>
+            <button th:onclick="|editProduct(${product.id})|">Edit</button>
+            <button th:onclick="|hideProduct(${product.id})|">Hide</button>
+
         </div>
 
         <div>

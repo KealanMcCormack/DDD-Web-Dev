@@ -22,6 +22,9 @@ public class Product {
     @Column
     int ownerId;
 
+    @Column
+    String hidden;
+
     public Product(){
 
     }
@@ -31,6 +34,23 @@ public class Product {
         this.name = name;
         this.description = description;
         this.ownerId = ownerId;
+        this.setHidden("false");
+    }
+
+    public int getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(int ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    public String getHidden() {
+        return hidden;
+    }
+
+    public void setHidden(String hidden) {
+        this.hidden = hidden;
     }
 
     public int getId() {

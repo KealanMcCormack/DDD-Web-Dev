@@ -156,5 +156,27 @@ public class MainController {
         productRepository.save(newAddition);
     }
 
+    @GetMapping("/product/remove")
+    public @ResponseBody Integer remove(@RequestParam Integer id){
+        productRepository.deleteById(id);
+        return id;
+    }
+
+    @GetMapping("/product/hide")
+    public @ResponseBody String hide(@RequestParam Integer id){
+        Product product = productRepository.getOne(id);
+
+        if(product.hidden == "true"){
+            product.setHidden("false");
+        } else{
+            product.setHidden("true");
+        }
+
+        productRepository.deleteById(id);
+        productRepository.save(product);
+
+        return product.getHidden();
+    }
+
 
 }
