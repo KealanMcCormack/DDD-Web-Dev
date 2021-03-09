@@ -2,9 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>New Product</title>
 </head>
 <body>
+    <container>
+        <h1>New Product</h1>
 
+        <table class="productTable">
+            <tr>
+                <th class="productHead">
+                    Product name:
+                </th>
+
+                <td>
+                    <input type="text" id="nameBox" name="nameBox">
+                </td>
+            </tr>
+
+            <tr>
+                <th class="loginHead">
+                    Product description:
+                </th>
+
+                <td>
+                    <input type="text" id="loginBoxPassword" name="passwordBox">
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                   Unit price:
+                </th>
+
+                <td>
+                    <input type="number" id="price" name="price">
+                </td>
+            </tr>
+
+        </table>
+
+        <div class="buttonaddProduct">
+            <button onclick="addProduct()">Add product</button>
+        </div>
+
+
+
+    </container>
 </body>
 </html>
