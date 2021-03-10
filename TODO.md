@@ -12,9 +12,9 @@
         - [x] Dynamic displaying of cart items
         - [x] Remove Product
     - [x] Checkout page
-    - [ ] Owner page (link from gallery)
+    - [x] Owner page (link from gallery)
         - [x] Owners should be able to hide products
-        - [ ] Gallery hidden stuff ^^^^ - **Gerard**
+        - [x] Gallery hidden stuff ^^^^ - **Gerard**
         - [x] Owners edit product details
 - B grade
     - [ ] Search for product - **Gerard**

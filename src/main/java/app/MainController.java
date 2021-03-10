@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -37,7 +38,14 @@ public class MainController {
         productRepository.save(new Product(2,"Lukas", "test1", 1));
         productRepository.save(new Product( 1, "Gerard", "test3", 1));
 
-        model.addAttribute("products", productRepository.findAll());
+        List<Product> allProducts = productRepository.findAll();
+        List<Product> visibleProducts = new ArrayList<>();
+        for(int i = 0;i<allProducts.size();i++){
+            if(allProducts.get(i).hidden.equals("false")){ // if product is visible
+                visibleProducts.add(allProducts.get(i));
+            }
+        }
+        model.addAttribute("products", visibleProducts);
         return "gallery.html";
     }
 
