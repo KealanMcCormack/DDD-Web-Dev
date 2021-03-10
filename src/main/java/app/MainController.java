@@ -68,9 +68,9 @@ public class MainController {
     //Creates Customer Account
     @PostMapping("/createCustomer")
     public @ResponseBody String createCustomer(@RequestBody Customer newCustomer){
-            customerRepository.save(newCustomer);
-            System.out.println(newCustomer.toString());
-            return "Success";
+        customerRepository.save(newCustomer);
+        System.out.println(newCustomer.toString());
+        return "Success";
     }
 
     //Creates Owner Account
@@ -84,7 +84,7 @@ public class MainController {
     //Loads cart page
     @GetMapping("/cart")
     public String cart(Model model){
-        //model.addAttribute(loggedInCustomer.getCart());
+        model.addAttribute("total", loggedInCustomer.totalPrice());
         return "cart.html";
     }
 
@@ -173,11 +173,6 @@ public class MainController {
         productRepository.save(newAddition);
     }
 
-    //Calculates total price of items in cart
-    @GetMapping("/cart/total")
-    public @ResponseBody void totalPrice(@RequestBody int id){
-        
-    }
 
     @GetMapping("/product/remove")
     public @ResponseBody Integer remove(@RequestParam Integer id){
