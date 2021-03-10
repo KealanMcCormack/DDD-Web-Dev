@@ -12,8 +12,3 @@ function deleteProduct() {
     var row = document.getElementById("row_" + id);
     table.deleteRow(row.rowIndex);
 }
-
-function totalPrice(id){
-    var xhr = new XMLHttpRequest();
-
-}
