@@ -40,12 +40,23 @@ public class MainController {
 
         List<Product> allProducts = productRepository.findAll();
         List<Product> visibleProducts = new ArrayList<>();
-        for(int i = 0;i<allProducts.size();i++){
-            if(allProducts.get(i).hidden.equals("false")){ // if product is visible
-                visibleProducts.add(allProducts.get(i));
-            }
-        }
-        model.addAttribute("products", visibleProducts);
+//        for(int i = 0;i<allProducts.size();i++){
+//            if(allProducts.get(i).hidden.equals("false")){ // if product is visible
+//                visibleProducts.add(allProducts.get(i));
+//            }
+//        }
+        allProducts.removeIf(x -> x.hidden.equals("true"));
+        model.addAttribute("products", allProducts);
+        return "gallery.html";
+    }
+
+    //Filters out products for search bar
+    @GetMapping("/gallerySearch/{searchString}")
+    public String gallerySearch(Model model, @PathVariable("searchString")String searchString){
+        List<Product> allProducts = productRepository.findAll();
+        allProducts.removeIf(x -> x.hidden.equals("true")); //Remove if hidden
+        allProducts.removeIf(x -> !x.getName().contains(searchString)); //Remove if X doesnt contain the search string
+        model.addAttribute("products", allProducts);
         return "gallery.html";
     }
 

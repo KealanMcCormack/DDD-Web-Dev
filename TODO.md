@@ -18,6 +18,8 @@
         - [x] Owners edit product details
 - B grade
     - [ ] Search for product - **Gerard**
+        - [x] Back end filter function
+        - [ ] Front end search bar
     - [x] Create customer account
         - [x] save login details
     - [x] Login to customer account
