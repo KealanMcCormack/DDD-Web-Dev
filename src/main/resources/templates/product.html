@@ -3,7 +3,7 @@
 <!--/@thymesVar id="product" type="app.Product"/-->
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/product.css">
+    <link rel="stylesheet" href="../static/product.css">
     <script type="text/javascript" src="/product.js"></script>
     <title th:text="${product.name}"></title>
 </head>
@@ -27,6 +27,12 @@
             <!-- Use spring boot to grab product description -->
             <p class="pageText_title">Description: </p>
             <p th:text="${product.description}" class="center">Placeholder Description</p>
+        </div>
+
+        <div class="pageText">
+            <!-- Use spring boot to grab product description -->
+            <p class="pageTextPrice">Price: </p>
+            <p th:text="${product.price}" class="center">Placeholder Price</p>
         </div>
 
         <div>

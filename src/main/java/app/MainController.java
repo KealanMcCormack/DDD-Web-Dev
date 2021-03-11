@@ -151,7 +151,7 @@ public class MainController {
     }
 
     // Generates Payment Page
-    @GetMapping("/paid")
+    @GetMapping("/paymentPage")
     public String paymentReceived() { return "paymentPage.html"; }
 
     @GetMapping("/cardDetails")
