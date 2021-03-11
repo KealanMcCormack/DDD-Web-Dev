@@ -51,10 +51,14 @@ public class MainController {
     }
 
     //Filters out products for search bar
-    @GetMapping("/gallerySearch/{searchString}")
-    public String gallerySearch(Model model, @PathVariable("searchString")String searchString){
+    @GetMapping("/gallerySearch")
+    public String gallerySearch(Model model, @RequestParam String searchString){
         List<Product> allProducts = productRepository.findAll();
         allProducts.removeIf(x -> x.hidden.equals("true")); //Remove if hidden
+        if (searchString.isBlank()){ //if search string is empty
+            model.addAttribute("products", allProducts);
+            return "gallery.html";
+        }
         allProducts.removeIf(x -> !x.getName().contains(searchString)); //Remove if X doesnt contain the search string
         model.addAttribute("products", allProducts);
         return "gallery.html";

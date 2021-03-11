@@ -30,3 +30,6 @@
     - [ ] JS AOS (animate on scroll)
     - [ ] Stripe implementation
     - [ ] JS anime (animation framework)
+ - TODAY TODO (FOR GERARD ONLY)
+    - [ ] Search bar
+    - [ ] Get cart page working
