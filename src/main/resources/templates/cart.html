@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/cart.css">
-    <title>cart</title>
+    <title>Cart</title>
 </head>
 <body>
 
@@ -20,7 +20,7 @@
 </form>
 
 <div class="tableContainer">
-    <table class="cartTable">
+    <table id="cartTable">
         <tr class="tableHeaderText">
             <th class="tableHeaderTextName">
                 Name
@@ -35,13 +35,12 @@
             </th>
         </tr>
 
-        <tr class="cartItems" th:each="cart : ${products}">
+        <tr th:each="product : ${cart}" th:id="|cartItem_${product.id}|">
             <td th:text="${product.name}"></td>
             <td th:text="${product.price}"></td>
             <td>
                 <button class="removeButton" th:onclick="|removeProduct(${product.id})|">Remove</button>
             </td>
-
         </tr>
 
         <tr>

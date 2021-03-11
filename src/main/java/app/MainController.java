@@ -89,13 +89,13 @@ public class MainController {
     @GetMapping("/cart")
     public String cart(Model model){
         model.addAttribute("total", loggedInCustomer.totalPrice());
+        model.addAttribute("cart", loggedInCustomer.getCart());
         return "cart.html";
     }
 
     //Adds product to cart
     @PostMapping("/cart/add")
     public @ResponseBody String addToCart(@RequestBody int id){
-        System.out.println(id);
         Product newProduct = productRepository.getOne(id);
         System.out.println(newProduct);
         loggedInCustomer.addToCart(newProduct);
@@ -180,7 +180,7 @@ public class MainController {
 
     @GetMapping("/product/remove")
     public @ResponseBody Integer remove(@RequestParam Integer id){
-        productRepository.deleteById(id);
+        loggedInCustomer.getCart().removeIf(x -> x.getId() == id);
         return id;
     }
 

@@ -17,9 +17,9 @@
         - [x] Gallery hidden stuff ^^^^ - **Gerard**
         - [x] Owners edit product details
 - B grade
-    - [ ] Search for product - **Gerard**
+    - [x] Search for product - **Gerard**
         - [x] Back end filter function
-        - [ ] Front end search bar
+        - [x] Front end search bar
     - [x] Create customer account
         - [x] save login details
     - [x] Login to customer account
@@ -31,5 +31,5 @@
     - [ ] Stripe implementation
     - [ ] JS anime (animation framework)
  - TODAY TODO (FOR GERARD ONLY)
-    - [ ] Search bar
+    - [x] Search bar
     - [ ] Get cart page working
