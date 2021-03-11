@@ -35,7 +35,7 @@
             </th>
         </tr>
 
-        <tr th:each="product : ${cart}" th:id="|cartItem_${product.id}|">
+        <tr th:each="product : ${cart}" th:id="|cartItem_${product.id}|" class="cartItem">
             <td th:text="${product.name}"></td>
             <td th:text="${product.price}"></td>
             <td>
