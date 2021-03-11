@@ -1,4 +1,4 @@
-function viewPerson(id){
+function viewCard(){
     var xhr = new XMLHttpRequest();
     xhr.onload=view;
     xhr.open("GET", "/cardDetails");

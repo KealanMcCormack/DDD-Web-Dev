@@ -17,20 +17,44 @@
     <p class="subTitle">Checkout</p>
 
     <div class="center">
-        <table id="Items">
-            <thead>
+        <table id="cartTable">
+            <tr class="tableHeaderText">
+                <th class="tableHeaderTextName">
+                    Name
+                </th>
+
+                <th class="tableHeaderTextQuantity">
+                    Quantity
+                </th>
+
+                <th class="tableHeaderTextPrice">
+                    Price
+                </th>
+            </tr>
+
+            <tr th:each="product : ${cart}" th:id="|cartItem_${product.id}|" class="cartItem">
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.price}"></td>
+                <td>
+                    <button class="removeButton" th:onclick="|removeProduct(${product.id})|">Remove</button>
+                </td>
+            </tr>
+
             <tr>
-                <th class="subText">Items in Cart</th>
-                <th class="underscore"></th>
+                <td>
+                    <p class="totalPrice">Total Price:</p>
+                    <textarea readonly class="totalPriceBox" name="priceBox" th:text="${total}"></textarea>
+                </td>
+
             </tr>
-            </thead>
-            <tbody>
-            <tr th:each="item : ${customer.kart}" th:id="|row_${item.id}|">
-                <td th:text="${item.type}"></td>
-                <!-- Number of the item and price should be included-->
-                <td><button th:onclick="|removeItem(${item.id})|" class="remove">Remove</button></td>
+
+            <tr>
+                <td>
+                    <button class="addCard" th:onclick="|viewCard()|">Add Card</button>
+                </td>
+
             </tr>
-            </tbody>
+
         </table>
 
     </div>
@@ -40,9 +64,9 @@
             <button type="submit" class="back">Return To Gallery</button>
         </form>
 
-        <form method="GET" action="/paymentPage">
+        <!--<form method="GET" action="/paymentPage">
             <button type="submit" class="buyNow">Buy Now</button>
-        </form>
+        </form> -->
     </div>
 
     <div id="card">
