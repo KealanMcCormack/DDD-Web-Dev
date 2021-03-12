@@ -3,7 +3,8 @@ function addProduct(){
         name : document.getElementById("nameBox").value,
         description : document.getElementById("descriptionBox").value,
         price : document.getElementById("price").value,
-    }
+        hidden : false,
+    };
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/addProduct");
@@ -26,7 +27,7 @@ function deleteProduct() {
     table.deleteRow(row.rowIndex);
 }
 
-function hideProduct(id){
+function hideProduct(id) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "/product/hide?id="+id);
     xhr.send();

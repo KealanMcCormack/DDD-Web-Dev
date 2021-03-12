@@ -172,8 +172,12 @@ public class MainController {
         return "productCreation.html";
     }
 
-    @GetMapping("/addProduct")
+    @GetMapping("/owner/add/product")
     public void addProduct(Product newAddition){
+        if(loggedInCustomer.getClass() == Owner.class){
+            newAddition.setOwnerId(((Owner) loggedInCustomer).getOwnerId());
+        }
+
         productRepository.save(newAddition);
     }
 
@@ -188,7 +192,7 @@ public class MainController {
     public @ResponseBody String hide(@RequestParam Integer id){
         Product product = productRepository.getOne(id);
 
-        if(product.hidden == "true"){
+        if(product.hidden.equals("true")){
             product.setHidden("false");
         } else{
             product.setHidden("true");
