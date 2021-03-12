@@ -48,12 +48,12 @@ public class Order {
     }
 
 
-    public Customer getCustomer() {
-        return customer;
+    public String getCustomerUsername() {
+        return customerUsername;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomerUsername(String customerUsername) {
+        this.customerUsername = customerUsername;
     }
 
     public List<Product> getProducts() {
