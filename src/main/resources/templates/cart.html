@@ -53,8 +53,10 @@
 
     </table>
 
-    <div class="buttonCart" th:each="kv : ${customer}">
-        <a class="cartBuyButton" th:href="'/checkout/'+${kv.value.username}">Buy</a>
+    <div class="buttonCart">
+        <form class="cartBuyButton" method="GET" action="/checkout">
+            <button type="submit">Checkout</button>
+        </form>
     </div>
 
 </div>

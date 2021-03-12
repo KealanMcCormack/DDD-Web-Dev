@@ -20,6 +20,12 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int customerId;
 
+    @OneToMany
+    private List<Product> cart = new ArrayList<>();
+
+    @OneToMany
+    private List<Order> orderHistory = new ArrayList<>();
+
     public List<Product> getCart() {
         return cart;
     }
@@ -27,10 +33,6 @@ public class Customer {
     public void setCart(List<Product> cart) {
         this.cart = cart;
     }
-
-
-    @OneToMany
-    private List<Product> cart = new ArrayList<>();
 
     public void addToCart(Product product){
         cart.add(product);
@@ -88,4 +90,15 @@ public class Customer {
         return total;
     }
 
+    public List<Order> getOrderHistory() {
+        return orderHistory;
+    }
+
+    public void setOrderHistory(List<Order> orderHistory) {
+        this.orderHistory = orderHistory;
+    }
+
+    public void addOrder(Order order){
+        orderHistory.add(order);
+    }
 }

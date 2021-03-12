@@ -135,13 +135,9 @@ public class MainController {
     }
 
     // Generates checkout for specific customer
-    @GetMapping("/checkout/{id}")
-    public String checkoutView(Model model, @PathVariable("username") String username){
-        Customer customer = customerRepository.getOne(username);
-        if(customer == null){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "customer not found");
-        }
-        model.addAttribute("customer", customer);
+    @GetMapping("/checkout")
+    public String checkoutView(Model model){
+        model.addAttribute("customer", loggedInCustomer);
         return "checkout.html";
     }
 
@@ -152,7 +148,11 @@ public class MainController {
 
     // Generates Payment Page
     @GetMapping("/paymentPage")
-    public String paymentReceived() { return "paymentPage.html"; }
+    public String paymentReceived() {
+        Order newOrder = new Order("Pending", loggedInCustomer.getCart(), loggedInCustomer.getUsername());
+        loggedInCustomer.addOrder(newOrder);
+        return "paymentPage.html";
+    }
 
     @GetMapping("/cardDetails")
     public String cardDetailsView() { return "cardDetails.html"; }

@@ -23,13 +23,14 @@
     - [x] Create customer account
         - [x] save login details
     - [x] Login to customer account
-    - [ ] Customer order history (need account page)
+    - [ ] Account Page  
+        - [ ] Customer order history (need account page)
     - [ ] Owners view all orders
     - [ ] Change the state of orders
+    - [ ] Clean up website - **Lukas**
+        - [ ] Product page CSS (buttons)
+        - [ ] Checkout CSS
 - A grade (pick one of these)
     - [ ] JS AOS (animate on scroll)
     - [ ] Stripe implementation
     - [ ] JS anime (animation framework)
- - TODAY TODO (FOR GERARD ONLY)
-    - [x] Search bar
-    - [ ] Get cart page working
