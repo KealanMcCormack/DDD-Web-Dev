@@ -23,8 +23,8 @@
     - [x] Create customer account
         - [x] save login details
     - [x] Login to customer account
-    - [ ] Account Page - **Gerard**
-        - [ ] Customer order history (need account page)
+    - [x] Account Page - **Gerard**
+        - [x] Customer order history (need account page)
     - [ ] Owners view all orders - **Kealan**
     - [ ] Change the state of orders - **Kealan**
     - [ ] Clean up website - **Lukas**
