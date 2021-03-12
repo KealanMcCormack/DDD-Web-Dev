@@ -140,7 +140,8 @@ public class MainController {
     // Generates checkout for specific customer
     @GetMapping("/checkout")
     public String checkoutView(Model model){
-        model.addAttribute("customer", loggedInCustomer);
+        model.addAttribute("cart", loggedInCustomer.getCart());
+        model.addAttribute("total", loggedInCustomer.totalPrice());
         return "checkout.html";
     }
 

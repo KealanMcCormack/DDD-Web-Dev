@@ -36,9 +36,6 @@
             <tr th:each="product : ${cart}" th:id="|cartItem_${product.id}|" class="cartItem">
                 <td th:text="${product.name}"></td>
                 <td th:text="${product.price}"></td>
-                <td>
-                    <button class="removeButton" th:onclick="|removeProduct(${product.id})|">Remove</button>
-                </td>
             </tr>
 
             <tr>

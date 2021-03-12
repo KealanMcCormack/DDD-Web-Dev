@@ -30,7 +30,8 @@
     - [ ] Clean up website - **Lukas**
         - [ ] Product page CSS (buttons)
         - [ ] Checkout CSS
-- A grade (pick one of these)
-    - [ ] JS AOS (animate on scroll)
-    - [ ] Stripe implementation
-    - [ ] JS anime (animation framework) 
+- [ ] CSS TO FIX - **Lukas**
+    - [ ] Product Page
+    - [ ] Checkout CSS
+    - [ ] Login Page (Buttons)
+    - [ ] Payment page (Im sorry Lukas)

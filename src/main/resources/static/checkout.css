@@ -77,4 +77,9 @@ html{
     left: 48%;
     top: 60%;
 }
-
+.totalPriceBox{
+    resize: none;
+}
+.tableHeaderTextPrice{
+    text-align: center;
+}

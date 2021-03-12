@@ -67,7 +67,7 @@ public class Order {
         return "Order{" +
                 "id=" + id +
                 ", state='" + state + '\'' +
-                ", products=" + productId +
+                ", productID=" + productId +
                 ", customerUsername='" + customerUsername + '\'' +
                 '}';
     }
