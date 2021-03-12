@@ -193,7 +193,7 @@ public class MainController {
         return id;
     }
 
-    @GetMapping("owner/product/hide")
+    @GetMapping("/owner/product/hide")
     public @ResponseBody String hide(@RequestParam Integer id){
         Product product = productRepository.getOne(id);
 
@@ -207,6 +207,13 @@ public class MainController {
         productRepository.save(product);
 
         return product.getHidden();
+    }
+
+    @GetMapping("/owner/product/edit/{id}")
+    public String ownerEditProduct(Model model, @PathVariable("id") int id) {
+        Product product =  productRepository.getOne(id);
+        model.addAttribute("product", product);
+        return "owner.html";
     }
 
 }

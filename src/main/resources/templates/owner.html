@@ -24,9 +24,6 @@
             <p th:text="${product.price}"></p>
             <p th:text="${product.hidden}"></p>
 
-            <div class="buttonRemoveProduct">
-                <button onclick="removeProduct()">Remove product</button>
-            </div>
             <button th:onclick="|removeProduct(${product.id})|">Remove</button>
             <button th:onclick="|editProduct(${product.id})|">Edit</button>
             <button th:onclick="|hideProduct(${product.id})|">Hide</button>
