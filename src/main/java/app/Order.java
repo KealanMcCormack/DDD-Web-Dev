@@ -1,8 +1,6 @@
 package app;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name="order")
@@ -15,8 +13,8 @@ public class Order {
     @Column
     String state;
 
-    @OneToMany
-    private List<Product> products = new ArrayList<>();
+    @Column
+    int productId;
 
     @Column
     String customerUsername;
@@ -24,9 +22,9 @@ public class Order {
 
     public Order() { }
 
-    public Order(String state, List<Product> products, String customerUsername) {
+    public Order(String state, int productId, String customerUsername) {
         this.state = state;
-        this.products = products;
+        this.productId = productId;
         this.customerUsername = customerUsername;
     }
 
@@ -56,12 +54,12 @@ public class Order {
         this.customerUsername = customerUsername;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     @Override
@@ -69,7 +67,7 @@ public class Order {
         return "Order{" +
                 "id=" + id +
                 ", state='" + state + '\'' +
-                ", products=" + products +
+                ", products=" + productId +
                 ", customerUsername='" + customerUsername + '\'' +
                 '}';
     }

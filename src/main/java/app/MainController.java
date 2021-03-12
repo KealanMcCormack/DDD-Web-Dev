@@ -149,8 +149,10 @@ public class MainController {
     // Generates Payment Page
     @GetMapping("/paymentPage")
     public String paymentReceived() {
-        Order newOrder = new Order("Pending", loggedInCustomer.getCart(), loggedInCustomer.getUsername());
-        loggedInCustomer.addOrder(newOrder);
+        for (Product x: loggedInCustomer.getCart()) {
+            Order newOrder = new Order("Pending", x.id, loggedInCustomer.getUsername());
+            loggedInCustomer.addOrder(newOrder);
+        }
         return "paymentPage.html";
     }
 
@@ -214,6 +216,25 @@ public class MainController {
         Product product =  productRepository.getOne(id);
         model.addAttribute("product", product);
         return "owner.html";
+    }
+
+    @GetMapping("/owner/orders")
+    public String ownerOrders(Model model){
+        List<Customer> customers = customerRepository.findAll();
+        List<Order> ownerOrders = new ArrayList<Order>();
+
+        for(Customer x : customers){
+            List<Order> orders = x.getOrderHistory();
+            for(Order y : orders){
+                Product product = productRepository.getOne(y.productId);
+                if(product.ownerId == ((Owner) loggedInCustomer).getOwnerId()){
+                    ownerOrders.add(y);
+                }
+            }
+        }
+
+        model.addAllAttributes(ownerOrders);
+        return "ownerOrders.html";
     }
 
 }
