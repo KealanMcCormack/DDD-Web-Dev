@@ -242,4 +242,10 @@ public class MainController {
         return "ownerOrders.html";
     }
 
+    @GetMapping("/account")
+    public String accountPageRedirect(Model model){
+        model.addAttribute("orderHistory", loggedInCustomer.getOrderHistory());
+        return "account.html";
+    }
+
 }

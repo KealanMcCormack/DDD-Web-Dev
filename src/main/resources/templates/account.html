@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/" lang="en">
+<!--/@thymesVar id="orderHistory" type="java.util.List<app.Order>"/-->
+<head>
+    <meta charset="UTF-8">
+    <title>Account</title>
+    <link rel="stylesheet" href="../static/account.css">
+</head>
+<body>
+    <h3 class="title">Amazon't</h3>
+    <p class="subText">Just a regular store</p>
+    <div class="tableContainer">
+        <table class="orderTable">
+            <tr>
+                <th class="header">Order ID</th>
+                <th class="header">Product ID</th>
+                <th class="header">State</th>
+            </tr>
+            <tr th:each="order : ${orderHistory}">
+                <td th:text="${order.id}"></td>
+                <td th:text="${order.productId}"></td>
+                <td th:text="${order.state}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
