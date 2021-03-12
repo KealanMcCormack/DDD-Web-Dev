@@ -1,10 +1,52 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/" lang="en">
+<!--/@thymesVar id="orders" type="java.util.list<app.Order>"/-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <link rel="stylesheet" href="/ownerOrders.css">
+    <title>Orders</title>
 </head>
 <body>
-$END$
+<div class="container">
+    <h3 class="title">Amazon't</h3>
+    <p class="subText">bottom text</p>
+
+    <!-- List items from shopping cart, provide payment button. Card input? -->
+    <p class="subTitle">Checkout</p>
+
+    <div class="center">
+        <table id="ownerTable">
+            <tr class="tableHeaderText">
+                <th class="tableHeaderTextName">
+                    Order Id
+                </th>
+
+                <th class="tableHeaderTextQuantity">
+                    Product
+                </th>
+
+                <th class="tableHeaderTextPrice">
+                    State
+                </th>
+            </tr>
+
+            <tr th:each="order : ${orders}" th:id="|row_${order.id}|" class="orderItem">
+                <td th:text="${order.id}"></td>
+                <td th:text="${order.productId}"></td>
+                <td th:text="${order.state}"></td>
+                
+            </tr>
+        </table>
+
+    </div>
+
+    <div>
+        <form method="GET" action="/">
+            <button type="submit" class="back">Back</button>
+        </form>
+    </div>
+
+</div>
 </body>
 </html>
