@@ -23,10 +23,10 @@
     - [x] Create customer account
         - [x] save login details
     - [x] Login to customer account
-    - [ ] Account Page  
+    - [ ] Account Page - **Gerard**
         - [ ] Customer order history (need account page)
-    - [ ] Owners view all orders
-    - [ ] Change the state of orders
+    - [ ] Owners view all orders - **Kealan**
+    - [ ] Change the state of orders - **Kealan**
     - [ ] Clean up website - **Lukas**
         - [ ] Product page CSS (buttons)
         - [ ] Checkout CSS
