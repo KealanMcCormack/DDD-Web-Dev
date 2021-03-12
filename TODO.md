@@ -33,4 +33,4 @@
 - A grade (pick one of these)
     - [ ] JS AOS (animate on scroll)
     - [ ] Stripe implementation
-    - [ ] JS anime (animation framework)
+    - [ ] JS anime (animation framework) 

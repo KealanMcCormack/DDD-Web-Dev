@@ -30,6 +30,9 @@ public class MainController {
     @Autowired
     private OwnerRepository ownerRepository;
 
+    @Autowired
+    private OrderRepository orderRepository;
+
     @GetMapping("/")
     public String gallery(Model model){
 
@@ -151,6 +154,7 @@ public class MainController {
     public String paymentReceived() {
         for (Product x: loggedInCustomer.getCart()) {
             Order newOrder = new Order("Pending", x.id, loggedInCustomer.getUsername());
+            orderRepository.save(newOrder);
             loggedInCustomer.addOrder(newOrder);
         }
         return "paymentPage.html";
