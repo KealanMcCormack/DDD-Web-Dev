@@ -7,7 +7,7 @@ function addProduct(){
     };
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/addProduct");
+    xhr.open("POST", "/owner/add/product");
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.send(JSON.stringify(record))
 }
@@ -15,20 +15,20 @@ function addProduct(){
 function removeProduct(id) {
     var xhr = new XMLHttpRequest();
     xhr.onload=deleteProduct;
-    xhr.open("GET", "/product/remove?id="+id);
+    xhr.open("GET", "/owner/product/remove?id="+id);
     xhr.send();
 }
 
 function deleteProduct() {
     var id = this.responseText;
     console.log(id);
-    var table = document.getElementById("people");
+    var table = document.getElementById("gridItem");
     var row = document.getElementById("row_" + id);
     table.deleteRow(row.rowIndex);
 }
 
 function hideProduct(id) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/product/hide?id="+id);
+    xhr.open("GET", "owner/product/hide?id="+id);
     xhr.send();
 }
