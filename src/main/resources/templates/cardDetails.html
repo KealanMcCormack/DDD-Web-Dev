@@ -1,35 +1,24 @@
-<link rel="stylesheet" href="/checkout.css">
-<script type="text/javascript" src="checkout.js"></script>
+<p class="titleText">Please input your card details below</p>
 
-<h1 class="titleText">Please input your card details below</h1>
 
-<table id="cardInfoTable">
-
-    <tbody>
-    <tr>
         <th class="underscore">Card number</th>
         <th class="underscore">CVC</th>
 
-    </tr>
-    <tr>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-    </tr>
 
-    <tr>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+
+
         <th class="underscore">Expiry Date</th>
 
-    </tr>
-    <tr>
+
         <td><input type="text"></td>
-    </tr>
-    </tbody>
-</table>
 
 
-<div>
-    <form method="GET" action="/paymentPage">
-        <button type="submit" class="buyNow">Buy Now</button>
-    </form>
-</div>
+        <td>
+            <form class="buyNow" method="GET" action="/paymentPage">
+                <button type="submit" >Buy Now</button>
+            </form>
+        </td>
+
 
