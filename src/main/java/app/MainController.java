@@ -171,15 +171,15 @@ public class MainController {
         return "owner.html";
     }
 
-    @GetMapping("/owner")
-    public String ownerPage(Model model){
-        List<Product> products =  productRepository.findAll();
-        int id = ((Owner) loggedInCustomer).getOwnerId();
-        products.removeIf(x -> x.ownerId != id);
-
-        model.addAttribute("products", products);
-        return "owner.html";
-    }
+//    @GetMapping("/owner")
+//    public String ownerPage(Model model){
+//        List<Product> products =  productRepository.findAll();
+//        int id = ((Owner) loggedInCustomer).getOwnerId();
+//        products.removeIf(x -> x.ownerId != id);
+//
+//        model.addAttribute("products", products);
+//        return "owner.html";
+//    }
 
     @GetMapping("/owner/product/remove/{id}")
     public void ownerRemoveProduct(@PathVariable("id") int id) {
@@ -251,8 +251,19 @@ public class MainController {
 
     @GetMapping("/account")
     public String accountPageRedirect(Model model){
-        model.addAttribute("orderHistory", loggedInCustomer.getOrderHistory());
-        return "account.html";
+        if((loggedInCustomer instanceof Customer) && !(loggedInCustomer instanceof Owner)){ //If user is customer
+            model.addAttribute("orderHistory", loggedInCustomer.getOrderHistory());
+            return "account.html";
+        }
+        if(loggedInCustomer instanceof Owner){ //if account is an owner
+            List<Product> products =  productRepository.findAll();
+            int id = ((Owner) loggedInCustomer).getOwnerId();
+            products.removeIf(x -> x.ownerId != id);
+
+            model.addAttribute("products", products);
+            return "owner.html";
+        }
+        }
     }
 
     @PostMapping("/owner/orders/state/{id}")
@@ -273,5 +284,4 @@ public class MainController {
         }
         return orderRepository.save(order);
     }
-
 }
