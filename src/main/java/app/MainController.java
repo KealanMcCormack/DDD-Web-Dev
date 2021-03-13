@@ -289,4 +289,12 @@ public class MainController {
         }
         return orderRepository.save(order);
     }
+
+    @PostMapping("/owner/product/edit/{id}")
+    public @ResponseBody Product edit(@RequestBody Product product, @PathVariable("id") int id){
+        productRepository.deleteById(id);
+        product.setOwnerId(id);
+        product.setOwnerId(((Owner) loggedInCustomer).getOwnerId());
+        return productRepository.save(product);
+    }
 }

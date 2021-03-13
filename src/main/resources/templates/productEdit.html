@@ -5,6 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Details</title>
+    <link rel="stylesheet" href="/productEdit.css">
+    <script type="text/javascript" src="productEdit.js"></script>
 </head>
 <body>
 
@@ -22,7 +24,6 @@
                     <th class="underscore">Name</th>
                     <th class="underscore">Product description</th>
                     <th class="underscore">Price</th>
-                    <th>State</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -30,7 +31,6 @@
                     <td th:text="${item.name}"></td>
                     <td th:text="${item.description}"></td>
                     <td th:text="${item.price}"></td>
-                    <td th:text="${item.hidden}"></td>
                 </tr>
                 </tbody>
             </table>
@@ -66,21 +66,12 @@
                         <input type="number" id="price" name="price">
                     </td>
                 </tr>
-
-                <tr>
-                    <th>
-                        State:
-                    </th>
-                    <td>
-                        <input type="number" id="state" name="state">
-                    </td>
-                </tr>
             </table>
         </td>
     </tr>
     <tr>
         <th class="buttonSaveChanges">
-            <button onclick="saveChanges()">Save Changes</button>
+            <button onclick="saveChanges(product.id)">Save Changes</button>
         </th>
     </tr>
 
