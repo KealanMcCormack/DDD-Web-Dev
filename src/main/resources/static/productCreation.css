@@ -1,0 +1,62 @@
+html{
+    background-color: #071013;
+}
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:auto;
+    color: #75ABBC;
+}
+.subText{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    margin: auto;
+    padding-bottom: 10px;
+    border-bottom: 2.5px solid #75ABBC;
+    color: #75ABBC;
+}
+.container{
+    height: 800px;
+    width: 100%;
+    position: relative;
+}
+.back {
+    position: absolute;
+    left: 2%;
+    top: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(#353535, cornflowerblue);
+    color: white;
+    border-radius: 4px;
+}
+.productTable {
+    top: 20%;
+    left: 20%;
+    position: absolute;
+}
+.title {
+    color: #75ABBC;
+    text-align: left;
+}
+.buttonAddProduct {
+    position: absolute;
+    left: 2%;
+    top: 14%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(#353535, cornflowerblue);
+    color: white;
+    border-radius: 4px;
+}
+.pageTitle {
+    position: absolute;
+    left: 25%;
+    top: 10%;
+    color: white;
+}
+.bigBox {
+    padding-bottom: 40px;
+    padding-right: 80px;
+}
+.smallBox {
+    padding-right: 80px;
+}

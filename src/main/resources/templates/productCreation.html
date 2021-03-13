@@ -3,52 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>New Product</title>
+    <link rel="stylesheet" href="../static/productCreation.css">
     <script type="text/javascript" src="owner.js"></script>
 </head>
 <body>
     <container>
-        <h1>New Product</h1>
+
+        <h3 class="title">Amazon't</h3>
+        <p class="subText">Just a regular store</p>
+
+        <h1 class="pageTitle">Your new Product</h1>
 
         <table class="productTable">
             <tr>
-                <th class="productHead">
+                <th class="title">
                     Product name:
                 </th>
 
                 <td>
-                    <input type="text" id="nameBox" name="nameBox">
+                    <input type="text" id="nameBox" name="nameBox" class="smallBox">
                 </td>
             </tr>
 
             <tr>
-                <th class="loginHead">
+                <th class="title">
                     Product description:
                 </th>
 
                 <td>
-                    <input type="text" id="descriptionBox" name="descriptionBox">
+                    <input type="text" id="descriptionBox" name="descriptionBox" class="bigBox">
                 </td>
             </tr>
 
             <tr>
-                <th>
+                <th class="title">
                    Unit price:
                 </th>
 
                 <td>
-                    <input type="number" id="price" name="price">
+                    <input type="number" id="price" name="price" class="smallBox">
                 </td>
             </tr>
 
         </table>
 
-        <div class="buttonAddProduct">
-            <button onclick="addProduct()">Add product</button>
+        <div>
+            <button onclick="addProduct()" class="buttonAddProduct">Add product</button>
         </div>
 
         <div>
             <form method="GET" action="/gallery">
-                <button type="submit" class="Back">Back</button>
+                <button type="submit" class="back">Back</button>
             </form>
         </div>
     </container>
