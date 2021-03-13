@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
     @Column
@@ -29,7 +28,8 @@ public class Product {
 
     }
 
-    public Product( int price, String name, String description, int ownerId) {
+    public Product( int id,int price, String name, String description, int ownerId) {
+        this.id = id;
         this.price = price;
         this.name = name;
         this.description = description;

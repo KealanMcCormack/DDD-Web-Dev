@@ -19,12 +19,11 @@ public class Owner extends Customer {
     public Owner(){
 
     }
-
     public Owner(String username, String password){
-        super(username, password);
         this.username = username;
         this.password = password;
     }
+
 
     public void setUsername(String username) { this.username = username; }
 

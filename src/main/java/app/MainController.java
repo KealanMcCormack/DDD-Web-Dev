@@ -15,9 +15,11 @@ public class MainController {
 
     Integer productID = 0;
     int customerID = 0;
-    int ownerID = 0;
+    int ownerID = 1;
 
-    Customer loggedInCustomer = new Customer("default", ""); //Creates default user
+    Customer loggedInCustomer = new Customer(customerID++, "default", ""); //Creates default user
+
+
     @Autowired
     private ProductRepository productRepository;
 
@@ -34,9 +36,9 @@ public class MainController {
     public String galleryInit(Model model){
 
         /*Initial objects*/
-        productRepository.save(new Product(12,"Kealan", "test", 1));
-        productRepository.save(new Product(2,"Lukas", "test1", 1));
-        productRepository.save(new Product( 1, "Gerard", "test3", 1));
+        productRepository.save(new Product(productID++,12,"Kealan", "test", 1));
+        productRepository.save(new Product(productID++,2,"Lukas", "test1", 1));
+        productRepository.save(new Product( productID++,1, "Gerard", "test3", 1));
 
         List<Product> allProducts = productRepository.findAll();
         allProducts.removeIf(x -> x.hidden.equals("true"));
@@ -74,6 +76,8 @@ public class MainController {
     //Creates Customer Account
     @PostMapping("/createCustomer")
     public @ResponseBody String createCustomer(@RequestBody Customer newCustomer){
+        newCustomer.setCustomerId(customerID);
+        customerID++;
         customerRepository.save(newCustomer);
         System.out.println(newCustomer.toString());
         return "Success";
@@ -81,9 +85,14 @@ public class MainController {
 
     //Creates Owner Account
     @PostMapping("/createOwner")
-    public @ResponseBody String createOwner(@RequestBody Owner newOwner){
-        ownerRepository.save(newOwner);
+    public @ResponseBody String createOwner(@RequestBody Owner received){
+        Owner newOwner = new Owner();
+        newOwner.setPassword(received.getPassword());
+        newOwner.setUsername(received.getUsername());
+        newOwner.setOwnerId(ownerID);
+        ownerID++;
         System.out.println(newOwner.toString());
+        ownerRepository.save(newOwner);
         return "Success";
     }
 
@@ -105,28 +114,27 @@ public class MainController {
     }
 
     //Login as customer
-    @GetMapping("/customerLogin")
+    @PostMapping("/customerLogin")
     public @ResponseBody String loginCustomer(@RequestBody Customer userEntered){
         Customer repoCustomer = customerRepository.getOne(userEntered.getUsername());
-        if(repoCustomer.getPassword() == userEntered.getPassword()){
+        if(repoCustomer.getPassword().equals(userEntered.getPassword())){
             loggedInCustomer = repoCustomer;
         }else{
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Password not correct :(");
         }
-        return "login.html";
+        return "Success";
     }
 
     //Login as owner
-    @GetMapping("/ownerLogin")
+    @PostMapping("/ownerLogin")
     public @ResponseBody String loginOwner(@RequestBody Owner ownerEntered){
-        System.out.println(loggedInCustomer.toString());
         Owner repoOwner = ownerRepository.getOne(ownerEntered.getUsername());
-        if(repoOwner.getPassword() == ownerEntered.getPassword()){
+        if(repoOwner.getPassword().equals(ownerEntered.getPassword())){
             loggedInCustomer = repoOwner;
         }else{
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Password not correct :(");
         }
-        return "login.html";
+        return "Success";
     }
 
     // Product view
@@ -196,12 +204,15 @@ public class MainController {
     }
 
     @GetMapping("/owner/add/product")
-    public void addProduct(Product newAddition){
+    public @ResponseBody String addProduct(@RequestBody Product newAddition){
+        newAddition.setId(productID);
+        productID++;
         if(loggedInCustomer.getClass() == Owner.class){
             newAddition.setOwnerId(((Owner) loggedInCustomer).getOwnerId());
         }
 
         productRepository.save(newAddition);
+        return "";
     }
 
 
