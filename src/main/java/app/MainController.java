@@ -248,4 +248,12 @@ public class MainController {
         return "account.html";
     }
 
+    @PostMapping("/owner/orders/state/{id}")
+    public @ResponseBody Order add(@RequestBody String state, @PathVariable("id") int id){
+        Order order = orderRepository.findById(id).get();
+        order.setState(state);
+        orderRepository.deleteById(id);
+        return orderRepository.save(order);
+    }
+
 }
