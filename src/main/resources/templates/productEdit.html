@@ -1,10 +1,87 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/" lang="en">
+<!--/@thymesVar id="product" type="app.Product"/-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Edit Details</title>
 </head>
 <body>
-$END$
+<table class="outer">
+    <tbody>
+    <tr>
+        <td>
+            <table id="productLeftCol">
+                <h1 class="titleText">Current Product</h1>
+                <thead>
+                <tr>
+                    <th class="underscore">Name</th>
+                    <th class="underscore">Product description</th>
+                    <th class="underscore">Price</th>
+                    <th>State</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="item : ${product}" th:id="|row_${item.id}|">
+                    <td th:text="${item.name}"></td>
+                    <td th:text="${item.description}"></td>
+                    <td th:text="${item.price}"></td>
+                    <td th:text="${item.hidden}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td>
+            <table class="productRightCol">
+                <tr>
+                    <th class="productHead">
+                        Product name:
+                    </th>
+
+                    <td>
+                        <input type="text" id="nameBox" name="nameBox">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th class="loginHead">
+                        Product description:
+                    </th>
+
+                    <td>
+                        <input type="text" id="descriptionBox" name="descriptionBox">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        Unit price:
+                    </th>
+                    <td>
+                        <input type="number" id="price" name="price">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        State:
+                    </th>
+                    <td>
+                        <input type="number" id="state" name="state">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <th class="buttonSaveChanges">
+            <button onclick="saveChanges()">Save Changes</button>
+        </th>
+    </tr>
+
+    </tbody>
+</table>
+
 </body>
 </html>
