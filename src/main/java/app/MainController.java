@@ -174,6 +174,16 @@ public class MainController {
         return "owner.html";
     }
 
+    @GetMapping("/owner")
+    public String ownerPage(Model model){
+        List<Product> products =  productRepository.findAll();
+        int id = ((Owner) loggedInCustomer).getOwnerId();
+        products.removeIf(x -> x.ownerId != id);
+
+        model.addAttribute("products", products);
+        return "owner.html";
+    }
+
     @GetMapping("/owner/product/remove/{id}")
     public void ownerRemoveProduct(@PathVariable("id") int id) {
         productRepository.deleteById(id);
