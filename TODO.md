@@ -31,7 +31,7 @@
         - [ ] Product page CSS (buttons)
         - [ ] Checkout CSS
 - [ ] CSS TO FIX - **Lukas**
-    - [ ] Product Page
+    - [x] Product Page
     - [x] Checkout CSS
     - [x] Login Page (Buttons)
     - [ ] Payment page (Im sorry Lukas)
