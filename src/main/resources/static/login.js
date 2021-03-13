@@ -3,7 +3,7 @@ function customerLogin(){
         username : document.getElementById("loginBox").value,
         password: document.getElementById("loginBoxPassword").value,
     }
-    console.log("customer{"+record+record.username+record.password+"}")
+    console.log("customer{"+record.username+", "+record.password+"}")
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/customerLogin");
     xhr.setRequestHeader("Content-type", "application/json");
