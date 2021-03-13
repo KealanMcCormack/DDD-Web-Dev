@@ -29,12 +29,12 @@ function deleteProduct(id) {
 
 function hideProduct(id) {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/owner/product/hide?id="+id);
+    xhr.open("POST", "/owner/product/hide/"+ id);
     xhr.send();
 }
 
 function editProduct(id) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/owner/product/edit/uh/"+id);
+    xhr.open("GET", "/owner/product/edit/uh/"+ id);
     xhr.send();
 }

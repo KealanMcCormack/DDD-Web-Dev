@@ -304,10 +304,19 @@ public class MainController {
     }
 
     @PostMapping("/owner/product/edit/{id}")
-    public @ResponseBody Product edit(@RequestBody Product product, @PathVariable("id") int id){
-        productRepository.deleteById(id);
-        product.setOwnerId(id);
-        product.setOwnerId(((Owner) loggedInCustomer).getOwnerId());
-        return productRepository.save(product);
+    public String edit(@RequestBody String x, @PathVariable("id") int id){
+        Product old = productRepository.getOne(id);
+        System.out.println(x.toString());
+        x = x.replaceAll("nameBox=", "");
+        x = x.replaceAll("descriptionBox=", "");
+        x = x.replaceAll("price=", "");
+        String[] y = x.split("&");
+        old.setDescription(y[1]);
+        old.setPrice(Integer.parseInt(y[2]));
+        System.out.println(x.toString());
+        old.setName(y[0]);
+        productRepository.delete(old);
+        productRepository.save(old);
+        return "owner.html";
     }
 }

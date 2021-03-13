@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Edit Details</title>
     <link rel="stylesheet" href="/productEdit.css">
-    <script type="text/javascript" src="productEdit.js"></script>
+    <script type="text/javascript" src="/productEdit.js"></script>
 </head>
 <body>
 <h3 class="title">Amazon't</h3>
@@ -15,10 +15,6 @@
 <form method="GET" action="/owner">
     <button type="submit" class="back">Back</button>
 </form>
-
-<div >
-    <button onclick="saveChanges(product.id)" class="buttonSaveChanges">Save Changes</button>
-</div>
 
 <h1 class="titleTextLeft">Current Product</h1>
 
@@ -42,7 +38,7 @@
             </table>
 
 
-
+        <form method="POST" th:action="|/owner/product/edit/${product.id}|">
             <table class="productRightCol">
                 <tbody>
                 <tr>
@@ -76,6 +72,9 @@
                 </tbody>
 
             </table>
+            <button type="submit" class="button">Save Changes</button>
+        </form>
+
 
 
 
