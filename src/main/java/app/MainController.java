@@ -31,20 +31,22 @@ public class MainController {
     private OrderRepository orderRepository;
 
     @GetMapping("/")
-    public String gallery(Model model){
+    public String galleryInit(Model model){
 
-        /*These are just for testing purposes*/
+        /*Initial objects*/
         productRepository.save(new Product(12,"Kealan", "test", 1));
         productRepository.save(new Product(2,"Lukas", "test1", 1));
         productRepository.save(new Product( 1, "Gerard", "test3", 1));
 
         List<Product> allProducts = productRepository.findAll();
-        List<Product> visibleProducts = new ArrayList<>();
-//        for(int i = 0;i<allProducts.size();i++){
-//            if(allProducts.get(i).hidden.equals("false")){ // if product is visible
-//                visibleProducts.add(allProducts.get(i));
-//            }
-//        }
+        allProducts.removeIf(x -> x.hidden.equals("true"));
+        model.addAttribute("products", allProducts);
+        return "gallery.html";
+    }
+
+    @GetMapping("/gallery")
+    public String gallery(Model model){
+        List<Product> allProducts = productRepository.findAll();
         allProducts.removeIf(x -> x.hidden.equals("true"));
         model.addAttribute("products", allProducts);
         return "gallery.html";
@@ -155,6 +157,7 @@ public class MainController {
             orderRepository.save(newOrder);
             loggedInCustomer.addOrder(newOrder);
         }
+        loggedInCustomer.getCart().clear(); //Empties cart
         return "paymentPage.html";
     }
 
@@ -263,7 +266,7 @@ public class MainController {
             model.addAttribute("products", products);
             return "owner.html";
         }
-        }
+        return "accountcreation.html";
     }
 
     @PostMapping("/owner/orders/state/{id}")
