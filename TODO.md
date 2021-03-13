@@ -25,9 +25,9 @@
     - [x] Login to customer account
     - [x] Account Page - **Gerard**
         - [x] Customer order history (need account page)
-    - [ ] Owners view all orders - **Kealan**
-    - [ ] Change the state of orders - **Kealan**
-    - [ ] Clean up website - **Lukas**
+    - [x] Owners view all orders - **Kealan**
+    - [x] Change the state of orders - **Kealan**
+    - [ ]  Clean up website - **Lukas**
         - [ ] Product page CSS (buttons)
         - [ ] Checkout CSS
 - [ ] CSS TO FIX - **Lukas**

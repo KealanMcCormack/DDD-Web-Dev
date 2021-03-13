@@ -16,9 +16,6 @@ public class MainController {
     Integer productID = 0;
     int customerID = 0;
     int ownerID = 0;
-//    HashMap<Integer, Product> productList = new HashMap<>();
-//    HashMap<String,Customer> customerList = new HashMap<>(); // Key = username
-//    HashMap<String,Owner> ownerList = new HashMap<>(); // Key = username
 
     Customer loggedInCustomer = new Customer("default", ""); //Creates default user
     @Autowired
