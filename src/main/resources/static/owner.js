@@ -35,6 +35,6 @@ function hideProduct(id) {
 
 function editProduct(id) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/owner/product/edit?id="+id);
+    xhr.open("GET", "/owner/product/edit/uh/"+id);
     xhr.send();
 }

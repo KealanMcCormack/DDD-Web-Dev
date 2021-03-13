@@ -240,7 +240,7 @@ public class MainController {
         return product.getHidden();
     }
 
-    @GetMapping("/owner/product/edit/{id}")
+    @GetMapping("/owner/product/edit/uh/{id}")
     public String ownerEditProduct(Model model, @PathVariable("id") int id) {
         Product product =  productRepository.getOne(id);
         model.addAttribute("product", product);
