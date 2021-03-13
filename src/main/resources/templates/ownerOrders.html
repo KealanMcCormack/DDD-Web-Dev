@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/ownerOrders.css">
+    <link rel="stylesheet" href="../static/ownerOrders.css">
     <title>Orders</title>
 </head>
 <body>
@@ -36,7 +36,7 @@
                 <td th:text="${order.productId}"></td>
                 <td th:text="${order.state}"></td>
                 <td><input type="text" id="state"/></td>
-                <td><button th:onclick="|setState(${order.id})|">Change State</button></td>
+                <td><button th:onclick="|setState(${order.id})|" class="button">Change State</button></td>
             </tr>
         </table>
 

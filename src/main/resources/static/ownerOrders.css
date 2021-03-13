@@ -1,0 +1,51 @@
+html{
+    background-color: #071013;
+}
+.container{
+    width:800px;
+}
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:auto;
+    color: #75ABBC;
+}
+.subText{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    margin: auto;
+    padding-bottom: 10px;
+    border-bottom: 2.5px solid #75ABBC;
+    color: #75ABBC;
+}
+.container{
+    height: 800px;
+    width: 100%;
+    position: relative;
+}
+.back {
+    position: absolute;
+    left: 0%;
+    top: 8%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(#353535, cornflowerblue);
+    color: white;
+    border-radius: 4px;
+}
+.tableHeaderText {
+    color: white;
+}
+.orderItem {
+    color: white;
+}
+.center {
+    left: 20%;
+    position: absolute;
+}
+.button {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(#353535, cornflowerblue);
+    color: white;
+    border-radius: 4px;
+}
+
