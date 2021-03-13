@@ -55,7 +55,12 @@ html{
 }
 .gridItem {
     color: white;
+}
+.gridContainer{
+    left: 30%;
     position: absolute;
-    left: 45%;
-    padding-top: 5px;
+}
+
+.header {
+    color: white;
 }

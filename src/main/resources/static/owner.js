@@ -1,3 +1,4 @@
+//Gets should be posts for a few of these. 
 function addProduct(){
     var record = {
         name : document.getElementById("nameBox").value,
