@@ -183,18 +183,19 @@ public class MainController {
         return "owner.html";
     }
 
-//    @GetMapping("/owner")
-//    public String ownerPage(Model model){
-//        List<Product> products =  productRepository.findAll();
-//        int id = ((Owner) loggedInCustomer).getOwnerId();
-//        products.removeIf(x -> x.ownerId != id);
-//
-//        model.addAttribute("products", products);
-//        return "owner.html";
-//    }
+    @GetMapping("/owner")
+    public String ownerPage(Model model){
+        List<Product> products =  productRepository.findAll();
+        int id = ((Owner) loggedInCustomer).getOwnerId();
+        products.removeIf(x -> x.ownerId != id);
 
-    @GetMapping("/owner/product/remove/{id}")
+        model.addAttribute("products", products);
+        return "owner.html";
+    }
+
+    @PostMapping("/owner/product/remove/{id}")
     public int ownerRemoveProduct(@PathVariable("id") int id) {
+        System.out.println("In id" + id);
         productRepository.deleteById(id);
         return id;
     }
@@ -204,14 +205,14 @@ public class MainController {
         return "productCreation.html";
     }
 
-    @GetMapping("/owner/add/product")
+    @PostMapping("/owner/add/product")
     public @ResponseBody String addProduct(@RequestBody Product newAddition){
         newAddition.setId(productID);
         productID++;
         if(loggedInCustomer.getClass() == Owner.class){
             newAddition.setOwnerId(((Owner) loggedInCustomer).getOwnerId());
         }
-
+        System.out.println(newAddition.toString());
         productRepository.save(newAddition);
         return "";
     }

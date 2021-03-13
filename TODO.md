@@ -30,9 +30,9 @@
     - [x]  Clean up website - **Lukas**
         - [x] Product page CSS (buttons)
         - [x] Checkout CSS
-- [x] CSS TO FIX - **Lukas**
+- [ ] CSS TO FIX - **Lukas**
     - [x] Product Page
-    - [x] Checkout CSS
+    - [ ] Checkout CSS
     - [x] Login Page (Buttons)
     - [x] Payment page (Im sorry Lukas)
 - [ ] Documentation

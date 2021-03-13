@@ -4,7 +4,7 @@ function addProduct(){
         name : document.getElementById("nameBox").value,
         description : document.getElementById("descriptionBox").value,
         price : document.getElementById("price").value,
-        hidden : false,
+        hidden : "false",
     };
 
     var xhr = new XMLHttpRequest();
@@ -15,13 +15,12 @@ function addProduct(){
 
 function removeProduct(id) {
     var xhr = new XMLHttpRequest();
-    xhr.onload=deleteProduct;
-    xhr.open("GET", "/owner/product/remove?id="+id);
+    deleteProduct(id)
+    xhr.open("POST", "/owner/product/remove/"+id);
     xhr.send();
 }
 
-function deleteProduct() {
-    var id = this.responseText;
+function deleteProduct(id) {
     console.log(id);
     var table = document.getElementById("gridItem");
     var row = document.getElementById("row_" + id);
