@@ -8,10 +8,11 @@
     <title th:text="${product.name}"></title>
 </head>
 <body>
-    <div class="container">
+
         <h3 class="title">Amazon't</h3>
         <p class="subText">bottom text</p>
 
+        <div class="container">
         <div>
             <!-- image path needs to be held in array -->
     <!--        <p class="productImage"><img src="/images/logo.jpg" alt="l"/></p>-->
@@ -31,7 +32,7 @@
 
         <div class="pageText">
             <!-- Use spring boot to grab product description -->
-            <p class="pageTextPrice">Price: </p>
+            <p class="pageText_title">Price: </p>
             <p th:text="${product.price}" class="center">Placeholder Price</p>
         </div>
 
