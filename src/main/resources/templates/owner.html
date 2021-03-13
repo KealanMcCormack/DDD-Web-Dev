@@ -11,9 +11,13 @@
 <h3 class="title">Amazon't</h3>
 <p class="subText">Just a regular store</p>
 
-<form method="GET" action="/">
-    <button type="submit" class="Back">Back</button>
+<form method="GET" action="/gallery">
+    <button type="submit" class="back">Back</button>
 </form>
+
+<div>
+    <button class="addProductButton" th:href="'/productCreation'">Add product</button>
+</div>
 
 <form method="GET" action="/owner/orders">
     <button type="submit" class="viewOrders">View Orders</button>
@@ -27,15 +31,13 @@
             <p th:text="${product.price}"></p>
             <p th:text="${product.hidden}"></p>
 
-            <button th:onclick="|removeProduct(${product.id})|">Remove</button>
-            <button th:onclick="|editProduct(${product.id})|">Edit</button>
-            <button th:onclick="|hideProduct(${product.id})|">Hide</button>
+            <button th:onclick="|removeProduct(${product.id})|" class="button">Remove</button>
+            <button th:onclick="|editProduct(${product.id})|" class="button">Edit</button>
+            <button th:onclick="|hideProduct(${product.id})|" class="button">Hide</button>
 
         </div>
 
-        <div>
-            <a class="addProductButton" th:href="'/productCreation'">Add product</a>
-        </div>
+
     </div>
 </div>
 </div>
