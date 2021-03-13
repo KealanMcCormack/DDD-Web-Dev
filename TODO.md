@@ -27,14 +27,14 @@
         - [x] Customer order history (need account page)
     - [x] Owners view all orders - **Kealan**
     - [x] Change the state of orders - **Kealan**
-    - [ ]  Clean up website - **Lukas**
-        - [ ] Product page CSS (buttons)
-        - [ ] Checkout CSS
+    - [x]  Clean up website - **Lukas**
+        - [x] Product page CSS (buttons)
+        - [x] Checkout CSS
 - [ ] CSS TO FIX - **Lukas**
     - [x] Product Page
     - [x] Checkout CSS
     - [x] Login Page (Buttons)
-    - [ ] Payment page (Im sorry Lukas)
+    - [x] Payment page (Im sorry Lukas)
 - [ ] Documentation
   - [ ] Wireframe - **Kealan**
   - [ ] Code - **DONE**
