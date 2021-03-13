@@ -1,7 +1,5 @@
 package app;
 
-import org.hibernate.annotations.GeneratorType;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -96,6 +94,10 @@ public class Customer {
 
     public void setOrderHistory(List<Order> orderHistory) {
         this.orderHistory = orderHistory;
+    }
+
+    public void removeOrder(Order order) {
+        this.orderHistory.remove(order);
     }
 
     public void addOrder(Order order){

@@ -263,6 +263,17 @@ public class MainController {
         Order order = orderRepository.findById(id).get();
         order.setState(state);
         orderRepository.deleteById(id);
+        List<Customer> customers = customerRepository.findAll();
+        for(Customer x : customers){
+            List<Order> orders = x.getOrderHistory();
+            for(Order y : orders){
+                if(y.id == id){
+                    x.removeOrder(y);
+                    y.setState(state);
+                    x.addOrder(y);
+                }
+            }
+        }
         return orderRepository.save(order);
     }
 
