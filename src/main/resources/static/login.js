@@ -3,6 +3,7 @@ function customerLogin(){
         username : document.getElementById("loginBox").value,
         password: document.getElementById("loginBoxPassword").value,
     }
+    console.log("customer{"+record+record.username+record.password+"}")
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/customerLogin");
     xhr.setRequestHeader("Content-type", "application/json");
@@ -14,6 +15,7 @@ function ownerLogin(){
         username : document.getElementById("loginBox").value,
         password: document.getElementById("loginBoxPassword").value,
     }
+    console.log("owner{"+record.username+", "+record.password+"}")
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/ownerLogin");
     xhr.setRequestHeader("Content-type", "application/json");

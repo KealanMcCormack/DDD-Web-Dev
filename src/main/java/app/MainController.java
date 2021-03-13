@@ -106,7 +106,7 @@ public class MainController {
 
     //Login as customer
     @GetMapping("/customerLogin")
-    public String loginCustomer(Customer userEntered){
+    public @ResponseBody String loginCustomer(@RequestBody Customer userEntered){
         Customer repoCustomer = customerRepository.getOne(userEntered.getUsername());
         if(repoCustomer.getPassword() == userEntered.getPassword()){
             loggedInCustomer = repoCustomer;
@@ -118,7 +118,8 @@ public class MainController {
 
     //Login as owner
     @GetMapping("/ownerLogin")
-    public String loginOwner(Owner ownerEntered){
+    public @ResponseBody String loginOwner(@RequestBody Owner ownerEntered){
+        System.out.println(loggedInCustomer.toString());
         Owner repoOwner = ownerRepository.getOne(ownerEntered.getUsername());
         if(repoOwner.getPassword() == ownerEntered.getPassword()){
             loggedInCustomer = repoOwner;
@@ -259,6 +260,7 @@ public class MainController {
             return "account.html";
         }
         if(loggedInCustomer instanceof Owner){ //if account is an owner
+            System.out.println(loggedInCustomer.toString());
             List<Product> products =  productRepository.findAll();
             int id = ((Owner) loggedInCustomer).getOwnerId();
             products.removeIf(x -> x.ownerId != id);
