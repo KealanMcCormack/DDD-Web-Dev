@@ -33,7 +33,7 @@
 - [ ] CSS TO FIX - **Lukas**
     - [ ] Product Page
     - [ ] Checkout CSS
-    - [ ] Login Page (Buttons)
+    - [x] Login Page (Buttons)
     - [ ] Payment page (Im sorry Lukas)
 - [ ] Documentation
   - [ ] Wireframe - **Kealan**
