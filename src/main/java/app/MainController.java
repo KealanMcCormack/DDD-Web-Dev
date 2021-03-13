@@ -194,8 +194,9 @@ public class MainController {
 //    }
 
     @GetMapping("/owner/product/remove/{id}")
-    public void ownerRemoveProduct(@PathVariable("id") int id) {
+    public int ownerRemoveProduct(@PathVariable("id") int id) {
         productRepository.deleteById(id);
+        return id;
     }
 
     @GetMapping("/productCreation")
@@ -222,7 +223,7 @@ public class MainController {
         return id;
     }
 
-    @GetMapping("/owner/product/hide")
+    @PostMapping("/owner/product/hide")
     public @ResponseBody String hide(@RequestParam Integer id){
         Product product = productRepository.getOne(id);
 
@@ -242,7 +243,7 @@ public class MainController {
     public String ownerEditProduct(Model model, @PathVariable("id") int id) {
         Product product =  productRepository.getOne(id);
         model.addAttribute("product", product);
-        return "owner.html";
+        return "productEdit.html";
     }
 
     @GetMapping("/owner/orders")

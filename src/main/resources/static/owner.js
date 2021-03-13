@@ -1,4 +1,4 @@
-//Gets should be posts for a few of these. 
+//Gets should be posts for a few of these.
 function addProduct(){
     var record = {
         name : document.getElementById("nameBox").value,
@@ -30,7 +30,7 @@ function deleteProduct() {
 
 function hideProduct(id) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/owner/product/hide?id="+id);
+    xhr.open("POST", "/owner/product/hide?id="+id);
     xhr.send();
 }
 
