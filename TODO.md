@@ -32,7 +32,7 @@
         - [ ] Checkout CSS
 - [ ] CSS TO FIX - **Lukas**
     - [ ] Product Page
-    - [ ] Checkout CSS
+    - [x] Checkout CSS
     - [x] Login Page (Buttons)
     - [ ] Payment page (Im sorry Lukas)
 - [ ] Documentation
