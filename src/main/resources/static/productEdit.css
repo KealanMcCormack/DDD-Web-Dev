@@ -1,0 +1,70 @@
+html{
+    background-color: #071013;
+}
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:auto;
+    color: #75ABBC;
+}
+.subText{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    margin: auto;
+    padding-bottom: 10px;
+    border-bottom: 2.5px solid #75ABBC;
+    color: #75ABBC;
+}
+.container{
+    height: 800px;
+    width: 100%;
+    position: relative;
+}
+.back {
+    position: absolute;
+    left: 2%;
+    top: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(#353535, cornflowerblue);
+    color: white;
+    border-radius: 4px;
+}
+.buttonSaveChanges{
+    position: absolute;
+    left: 2%;
+    top: 14%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(#353535, cornflowerblue);
+    color: white;
+    border-radius: 4px;
+}
+.productLeftCol {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    color: white;
+    text-align: left;
+}
+
+.productRightCol {
+    position: absolute;
+    left: 60%;
+    top: 20%;
+    color: white;
+    text-align: left;
+}
+
+.titleTextLeft {
+    color: white;
+    position: absolute;
+    left: 18%;
+    top: 10%;
+}
+
+.bigBox {
+    padding-bottom: 40px;
+    padding-right: 80px;
+}
+.smallBox {
+    padding-right: 80px;
+}

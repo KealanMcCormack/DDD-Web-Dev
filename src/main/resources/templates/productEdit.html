@@ -9,74 +9,76 @@
     <script type="text/javascript" src="productEdit.js"></script>
 </head>
 <body>
+<h3 class="title">Amazon't</h3>
+<p class="subText">Just a regular store</p>
 
 <form method="GET" action="/owner">
-    <button type="submit" class="Back">Back</button>
+    <button type="submit" class="back">Back</button>
 </form>
-<table class="outer">
-    <tbody>
-    <tr>
-        <td>
-            <table id="productLeftCol">
-                <h1 class="titleText">Current Product</h1>
-                <thead>
-                <tr>
-                    <th class="underscore">Name</th>
-                    <th class="underscore">Product description</th>
-                    <th class="underscore">Price</th>
-                </tr>
-                </thead>
+
+<div >
+    <button onclick="saveChanges(product.id)" class="buttonSaveChanges">Save Changes</button>
+</div>
+
+<h1 class="titleTextLeft">Current Product</h1>
+
+            <table class="productLeftCol">
                 <tbody>
-                <tr th:each="item : ${product}" th:id="|row_${item.id}|">
-                    <td th:text="${item.name}"></td>
-                    <td th:text="${item.description}"></td>
-                    <td th:text="${item.price}"></td>
+                <tr>
+                    <th class="title">Name</th>
+
+                    <td th:text="${product.name}"></td>
+                </tr>
+                <tr>
+                    <th class="title">Product description</th>
+
+                    <td th:text="${product.description}"></td>
+                </tr>
+                    <th class="title">Price</th>
+
+                    <td th:text="${product.price}"></td>
                 </tr>
                 </tbody>
             </table>
-        </td>
 
-        <td>
+
+
             <table class="productRightCol">
+                <tbody>
                 <tr>
-                    <th class="productHead">
+                    <th class="title">
                         Product name:
                     </th>
 
                     <td>
-                        <input type="text" id="nameBox" name="nameBox">
+                        <input type="text" id="nameBox" name="nameBox" class="smallBox">
                     </td>
                 </tr>
 
                 <tr>
-                    <th class="loginHead">
+                    <th class="title">
                         Product description:
                     </th>
 
                     <td>
-                        <input type="text" id="descriptionBox" name="descriptionBox">
+                        <input type="text" id="descriptionBox" name="descriptionBox" class="bigBox">
                     </td>
                 </tr>
 
                 <tr>
-                    <th>
+                    <th class="title">
                         Unit price:
                     </th>
                     <td>
-                        <input type="number" id="price" name="price">
+                        <input type="number" id="price" name="price" class="smallBox">
                     </td>
                 </tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <th class="buttonSaveChanges">
-            <button onclick="saveChanges(product.id)">Save Changes</button>
-        </th>
-    </tr>
+                </tbody>
 
-    </tbody>
-</table>
+            </table>
+
+
+
 
 </body>
 </html>
