@@ -35,3 +35,8 @@
     - [ ] Checkout CSS
     - [ ] Login Page (Buttons)
     - [ ] Payment page (Im sorry Lukas)
+- [ ] Documentation
+  - [ ] Wireframe - **Kealan**
+  - [ ] Code - **DONE**
+  - [ ] Video walkthrough - **Lukas**
+  - [ ] Final report   - **Gerard**
