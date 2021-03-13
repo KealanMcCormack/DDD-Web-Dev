@@ -10,15 +10,14 @@
 <body>
 <h3 class="title">Amazon't</h3>
 <p class="subText">Just a regular store</p>
-
-
-
     <div class="container">
         <form method="GET" action="/gallery">
             <button type="submit" class="back">Back</button>
         </form>
         <div>
-            <button class="addProductButton" th:href="'/productCreation'">Add product</button>
+            <form method="GET" action="/productCreation">
+                <button class="addProductButton" type="submit">Add product</button>
+            </form>
         </div>
         <form method="GET" action="/owner/orders">
             <button type="submit" class="viewOrders">View Orders</button>
