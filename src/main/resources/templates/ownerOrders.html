@@ -35,7 +35,16 @@
                 <td th:text="${order.id}"></td>
                 <td th:text="${order.productId}"></td>
                 <td th:text="${order.state}"></td>
-                <td><input type="text" id="state"/></td>
+
+                <td>
+                    <select name="stateSelection" id="state">
+                        <option value="new">New</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="cancelled">Cancelled</option>
+                        <option value="delivered">Delivered</option>
+                    </select>
+                </td>
+
                 <td><button th:onclick="|setState(${order.id})|" class="button">Change State</button></td>
             </tr>
         </table>

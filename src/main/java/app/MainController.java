@@ -309,14 +309,21 @@ public class MainController {
         order.setState(state);
         orderRepository.deleteById(id);
         List<Customer> customers = customerRepository.findAll();
-        for(Customer x : customers){
-            List<Order> orders = x.getOrderHistory();
-            for(Order y : orders){
-                if(y.id == id){
-                    x.removeOrder(y);
-                    y.setState(state);
-                    x.addOrder(y);
+
+        boolean flag = false;
+        for(Customer customer : customers){
+            List<Order> orders = customer.getOrderHistory();
+            for(Order curOrder : orders){
+                if(curOrder.id == id){
+                    customer.removeOrder(curOrder);
+                    curOrder.setState(state);
+                    customer.addOrder(curOrder);
+                    flag=true;
+                    break;
                 }
+            }
+            if(flag){
+                break;
             }
         }
         return orderRepository.save(order);
