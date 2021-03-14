@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Details</title>
-    <link rel="stylesheet" href="/productEdit.css">
+    <link rel="stylesheet" href="../static/productEdit.css">
     <script type="text/javascript" src="/productEdit.js"></script>
 </head>
 <body>
@@ -21,16 +21,16 @@
             <table class="productLeftCol">
                 <tbody>
                 <tr>
-                    <th class="title">Name</th>
+                    <th class="title">Name:</th>
 
                     <td th:text="${product.name}"></td>
                 </tr>
                 <tr>
-                    <th class="title">Product description</th>
+                    <th class="title">Product description:</th>
 
                     <td th:text="${product.description}"></td>
                 </tr>
-                    <th class="title">Price</th>
+                    <th class="title">Price:</th>
 
                     <td th:text="${product.price}"></td>
                 </tr>
@@ -71,17 +71,10 @@
                 </tr>
 
                 <tr>
-                    <td><button th:onclick="|editProduct(${product.id})|" class="button">Save</button></td>
+                    <td><button th:onclick="|editProduct(${product.id})|" class="buttonSave">Save</button></td>
                 </tr>
                 </tbody>
 
             </table>
-
-
-
-
-
-
-
 </body>
 </html>
