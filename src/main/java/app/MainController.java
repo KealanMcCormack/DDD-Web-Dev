@@ -289,9 +289,12 @@ public class MainController {
             List<Order> orders = cust.getOrderHistory();
             for(Order ord : orders){
                 Product product = productRepository.getOne(ord.productId);
-                System.out.println(product.ownerId + ", "+((Owner) loggedInCustomer).getOwnerId());
+                System.out.println(product.toString());
+                System.out.println(ord.productId);
+                System.out.println(ord.toString());
+                System.out.println(product.getOwnerId() + ", "+((Owner) loggedInCustomer).getOwnerId());
 
-                if(product.ownerId == ((Owner) loggedInCustomer).getOwnerId()){
+                if(product.getOwnerId() == ((Owner) loggedInCustomer).getOwnerId()){
                     System.out.println("in if statement");
                     ownerOrders.add(ord);
                     System.out.println(ownerOrders.toString());
