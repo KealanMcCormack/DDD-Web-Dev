@@ -16,8 +16,13 @@ function addProduct(){
 function removeProduct(id) {
     var xhr = new XMLHttpRequest();
     deleteProduct(id);
-    xhr.open("POST", "/owner/product/remove/"+id);
+    xhr.onload=insert();
+    xhr.open("POST", "/owner/product/remove/" + id);
     xhr.send();
+}
+
+function insert() {
+    var thing = this.responseText;
 }
 
 function deleteProduct(id) {

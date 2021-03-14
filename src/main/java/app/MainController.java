@@ -194,7 +194,7 @@ public class MainController {
     }
 
     @PostMapping("/owner/product/remove/{id}")
-    public String ownerRemoveProduct(@PathVariable("id") int id) {
+    public @ResponseBody String ownerRemoveProduct(@PathVariable("id") int id) {
         System.out.println("In id " + id);
         productRepository.deleteById(id);
         return "";
