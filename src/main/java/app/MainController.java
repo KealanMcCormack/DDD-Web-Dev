@@ -194,10 +194,10 @@ public class MainController {
     }
 
     @PostMapping("/owner/product/remove/{id}")
-    public int ownerRemoveProduct(@PathVariable("id") int id) {
-        System.out.println("In id" + id);
+    public String ownerRemoveProduct(@PathVariable("id") int id) {
+        System.out.println("In id " + id);
         productRepository.deleteById(id);
-        return id;
+        return "";
     }
 
     @GetMapping("/productCreation")
@@ -209,9 +209,9 @@ public class MainController {
     public @ResponseBody String addProduct(@RequestBody Product newAddition){
         newAddition.setId(productID);
         productID++;
-        if(loggedInCustomer.getClass() == Owner.class){
+        //if(loggedInCustomer.getClass() == Owner.class){
             newAddition.setOwnerId(((Owner) loggedInCustomer).getOwnerId());
-        }
+        //}
         System.out.println(newAddition.toString());
         productRepository.save(newAddition);
         return "";
@@ -237,7 +237,7 @@ public class MainController {
 
         productRepository.deleteById(id);
         productRepository.save(product);
-        return "Success";
+        return "";
     }
 
     @GetMapping("/owner/product/edit/uh/{id}")

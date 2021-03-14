@@ -15,7 +15,7 @@ function addProduct(){
 
 function removeProduct(id) {
     var xhr = new XMLHttpRequest();
-    deleteProduct(id)
+    deleteProduct(id);
     xhr.open("POST", "/owner/product/remove/"+id);
     xhr.send();
 }
