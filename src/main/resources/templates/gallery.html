@@ -35,7 +35,6 @@
             <div class="gridItem" th:each="product : ${products}">
                 <p th:text="${product.name}"></p>
                 <p th:text="${product.price}"></p>
-                <p th:text="${product.id}"></p>
                 <a class="viewProductButton" th:href="'/product/'+${product.id}">View</a>
             </div>
         </div>
