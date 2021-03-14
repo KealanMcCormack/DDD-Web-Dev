@@ -28,13 +28,13 @@ public class Product {
 
     }
 
-    public Product( int id,int price, String name, String description, int ownerId) {
+    public Product( int id,int price, String name, String description, int ownerId, String hidden) {
         this.id = id;
         this.price = price;
         this.name = name;
         this.description = description;
         this.ownerId = ownerId;
-        this.setHidden("false");
+        this.hidden = hidden;
     }
 
     public int getOwnerId() {
@@ -92,6 +92,7 @@ public class Product {
                 ", price=" + price +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", hidden='" + hidden +'\'' +
                 '}';
     }
 }

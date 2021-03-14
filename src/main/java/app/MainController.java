@@ -36,9 +36,9 @@ public class MainController {
     public String galleryInit(Model model){
 
         /*Initial objects*/
-        productRepository.save(new Product(productID++,12,"Kealan", "test", 1));
-        productRepository.save(new Product(productID++,2,"Lukas", "test1", 1));
-        productRepository.save(new Product( productID++,1, "Gerard", "test3", 1));
+        productRepository.save(new Product(productID++,12,"Kealan", "test", 1, "false"));
+        productRepository.save(new Product(productID++,2,"Lukas", "test1", 1, "false"));
+        productRepository.save(new Product( productID++,1, "Gerard", "test3", 1, "false"));
 
         List<Product> allProducts = productRepository.findAll();
         allProducts.removeIf(x -> x.hidden.equals("true"));
@@ -224,11 +224,12 @@ public class MainController {
         return id;
     }
 
-    @PostMapping("/owner/product/hide")
-    public @ResponseBody String hide(@RequestParam Integer id){
+    @PostMapping("/owner/product/hide/{id}")
+    public @ResponseBody String hide(@PathVariable("id") int id){
         Product product = productRepository.getOne(id);
-
-        if(product.hidden.equals("true")){
+        System.out.println(product.toString());
+        System.out.println(product.getHidden());
+        if(product.getHidden().equals("true")){
             product.setHidden("false");
         } else{
             product.setHidden("true");
@@ -236,8 +237,7 @@ public class MainController {
 
         productRepository.deleteById(id);
         productRepository.save(product);
-
-        return product.getHidden();
+        return "Success";
     }
 
     @GetMapping("/owner/product/edit/uh/{id}")
