@@ -40,9 +40,17 @@ public class MainController {
         customerRepository.save(loggedInCustomer);
 
         /*Initial objects*/
-        productRepository.save(new Product(productID++,12,"Kealan", "test", 1, "false"));
-        productRepository.save(new Product(productID++,2,"Lukas", "test1", 1, "false"));
-        productRepository.save(new Product( productID++,1, "Gerard", "test3", 1, "false"));
+        productRepository.save(new Product( productID++,100, "Downloadable RAM 2GB", "All new, HIGH QUALITY DOWNLODABLE RAM", 1, "false"));
+        productRepository.save(new Product( productID++,200, "Downloadable RAM 1TB", "All new, HIGH QUALITY DOWNLODABLE RAM", 1, "false"));
+        productRepository.save(new Product( productID++,5, "ULTRA FAST USB STICK!!!! (2PB)", "You could have data centre or this", 1, "false"));
+        productRepository.save(new Product( productID++,1000, "DOWNLOAD APPLE YPHONE", "Download onto nokia, with waterproof firmware update", 1, "false"));
+        productRepository.save(new Product( productID++,690, "Eanna Currans' special gel", "mmmmm special gel", 1, "false"));
+        productRepository.save(new Product( productID++,35, "Snake oil 1L", "Freshly juiced snakes", 1, "false"));
+        productRepository.save(new Product( productID++,1000, "duck", "quack,quack,quack,quack", 1, "false"));
+        productRepository.save(new Product( productID++,334, "DOWNLOADABLE CAT EARS", "Lukas made me do this", 1, "false"));
+        productRepository.save(new Product( productID++,1000, "reddit stonks guide", "buy high sell low", 1, "false"));
+        productRepository.save(new Product( productID++,9, "downloadable cal", "now with limbs", 1, "false"));
+        productRepository.save(new Product( productID++,1, "candle", "candle scented", 1, "false"));
 
         List<Product> allProducts = productRepository.findAll();
         allProducts.removeIf(x -> x.hidden.equals("true"));
