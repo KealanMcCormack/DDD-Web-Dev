@@ -35,7 +35,7 @@
                 <td th:text="${product.hidden}"></td>
 
                 <td><button th:onclick="|removeProduct(${product.id})|" class="button">Remove</button></td>
-                <td><button th:onclick="|hideProduct(${product.id})|" class="button">Edit</button></td>
+                <td><button th:onclick="|hideProduct(${product.id})|" class="button">Hide</button></td>
                 <td>
                     <form method="GET" th:action="|/owner/product/edit/uh/${product.id}|">
                         <button type="submit" class="button">Edit</button>
