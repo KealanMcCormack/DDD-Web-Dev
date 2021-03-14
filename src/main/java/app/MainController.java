@@ -35,6 +35,9 @@ public class MainController {
     @GetMapping("/")
     public String galleryInit(Model model){
 
+        /*Adding initial customer to repo*/
+        customerRepository.save(loggedInCustomer);
+
         /*Initial objects*/
         productRepository.save(new Product(productID++,12,"Kealan", "test", 1, "false"));
         productRepository.save(new Product(productID++,2,"Lukas", "test1", 1, "false"));
@@ -54,6 +57,14 @@ public class MainController {
         return "gallery.html";
     }
 
+    @PostMapping("/logout")
+    public String logout(Model model){
+        loggedInCustomer = new Customer(customerID++, "default", "");
+        List<Product> allProducts = productRepository.findAll();
+        allProducts.removeIf(x -> x.hidden.equals("true"));
+        model.addAttribute("products", allProducts);
+        return "gallery.html";
+    }
     //Filters out products for search bar
     @GetMapping("/gallerySearch")
     public String gallerySearch(Model model, @RequestParam String searchString){
@@ -167,6 +178,8 @@ public class MainController {
             loggedInCustomer.addOrder(newOrder);
         }
         loggedInCustomer.getCart().clear(); //Empties cart
+        customerRepository.delete(loggedInCustomer);
+        customerRepository.save(loggedInCustomer);
         return "paymentPage.html";
     }
 
@@ -269,19 +282,20 @@ public class MainController {
     @GetMapping("/owner/orders")
     public String ownerOrders(Model model){
         List<Customer> customers = customerRepository.findAll();
-        List<Order> ownerOrders = new ArrayList<Order>();
-
-        for(Customer x : customers){
-            List<Order> orders = x.getOrderHistory();
-            for(Order y : orders){
-                Product product = productRepository.getOne(y.productId);
+        List<Order> ownerOrders = new ArrayList<>();
+        for(Customer cust : customers){
+            List<Order> orders = cust.getOrderHistory();
+            for(Order ord : orders){
+                Product product = productRepository.getOne(ord.productId);
+                System.out.println(product.toString());
                 if(product.ownerId == ((Owner) loggedInCustomer).getOwnerId()){
-                    ownerOrders.add(y);
+                    ownerOrders.add(ord);
                 }
             }
         }
 
-        model.addAllAttributes(ownerOrders);
+        //System.out.println(ownerOrders.toString());
+        model.addAttribute("orders", ownerOrders);
         return "ownerOrders.html";
     }
 

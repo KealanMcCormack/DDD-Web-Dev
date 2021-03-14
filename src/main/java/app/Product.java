@@ -93,6 +93,7 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", hidden='" + hidden +'\'' +
+                ", ownerId='" + ownerId +'\'' +
                 '}';
     }
 }
