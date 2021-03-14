@@ -224,11 +224,30 @@ public class MainController {
         return id;
     }
 
+    @PostMapping("/owner/product/hide")
+    public @ResponseBody String hide(@RequestBody String passedId){
+        System.out.println("here " + passedId);
+        passedId = passedId.replaceAll("productId=", "");
+        int id = Integer.parseInt(passedId);
+        Product product = productRepository.getOne(id);
+        System.out.println(product.toString());
+        System.out.println(product.getHidden());
+        if(product.getHidden().equals("true")){
+            product.setHidden("false");
+        } else{
+            product.setHidden("true");
+        }
+
+        productRepository.deleteById(id);
+        productRepository.save(product);
+        return "";
+    }
+
     @PostMapping("/owner/product/hide/{id}")
     public @ResponseBody String hide(@PathVariable("id") int id){
         Product product = productRepository.getOne(id);
         System.out.println(product.toString());
-        System.out.println(product.getHidden());
+        System.out.println(product.getHidden() + " " + id);
         if(product.getHidden().equals("true")){
             product.setHidden("false");
         } else{
@@ -317,6 +336,7 @@ public class MainController {
         old.setName(y[0]);
         productRepository.delete(old);
         productRepository.save(old);
-        return "owner.html";
+
+        return "Success";
     }
 }
