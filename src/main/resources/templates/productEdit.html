@@ -38,7 +38,7 @@
             </table>
 
 
-        <form method="POST" th:action="|/owner/product/edit/${product.id}|">
+
             <table class="productRightCol">
                 <tbody>
                 <tr>
@@ -69,11 +69,15 @@
                         <input type="number" id="price" name="price" class="smallBox">
                     </td>
                 </tr>
+
+                <tr>
+                    <td><button th:onclick="|editProduct(${product.id})|" class="button">Save</button></td>
+                </tr>
                 </tbody>
 
             </table>
-            <button type="submit" class="button">Save Changes</button>
-        </form>
+
+
 
 
 

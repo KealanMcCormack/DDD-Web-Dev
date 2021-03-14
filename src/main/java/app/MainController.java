@@ -322,21 +322,15 @@ public class MainController {
         return orderRepository.save(order);
     }
 
-    @PostMapping("/owner/product/edit/{id}")
-    public String edit(@RequestBody String x, @PathVariable("id") int id){
+    @PostMapping("/owner/product/edit/uh/owner/product/edit/js/{id}")
+    public @ResponseBody Product edited(@RequestBody Product edit, @PathVariable("id") int id){
         Product old = productRepository.getOne(id);
-        System.out.println(x.toString());
-        x = x.replaceAll("nameBox=", "");
-        x = x.replaceAll("descriptionBox=", "");
-        x = x.replaceAll("price=", "");
-        String[] y = x.split("&");
-        old.setDescription(y[1]);
-        old.setPrice(Integer.parseInt(y[2]));
-        System.out.println(x.toString());
-        old.setName(y[0]);
+        System.out.println(edit.toString());
+        old.setName(edit.getName());
+        old.setPrice(edit.getPrice());
+        old.setDescription(edit.getDescription());
         productRepository.delete(old);
         productRepository.save(old);
-
-        return "Success";
+        return productRepository.save(old);
     }
 }
