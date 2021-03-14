@@ -13,7 +13,6 @@ public class Owner extends Customer {
     private String password;
 
     @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int ownerId;
 
     public Owner(){

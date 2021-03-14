@@ -16,6 +16,7 @@ public class MainController {
     Integer productID = 0;
     int customerID = 0;
     int ownerID = 1;
+    int orderID = 0;
 
     Customer loggedInCustomer = new Customer(customerID++, "default", ""); //Creates default user
 
@@ -173,7 +174,8 @@ public class MainController {
     @GetMapping("/paymentPage")
     public String paymentReceived() {
         for (Product x: loggedInCustomer.getCart()) {
-            Order newOrder = new Order("Pending", x.id, loggedInCustomer.getUsername());
+            Order newOrder = new Order(orderID,"Pending", x.getId(), loggedInCustomer.getUsername());
+            orderID++;
             orderRepository.save(newOrder);
             loggedInCustomer.addOrder(newOrder);
         }
@@ -287,9 +289,12 @@ public class MainController {
             List<Order> orders = cust.getOrderHistory();
             for(Order ord : orders){
                 Product product = productRepository.getOne(ord.productId);
-                System.out.println(product.toString());
+                System.out.println(product.ownerId + ", "+((Owner) loggedInCustomer).getOwnerId());
+
                 if(product.ownerId == ((Owner) loggedInCustomer).getOwnerId()){
+                    System.out.println("in if statement");
                     ownerOrders.add(ord);
+                    System.out.println(ownerOrders.toString());
                 }
             }
         }
