@@ -10,6 +10,6 @@
 
 ##ADDITIONAL ASSIGNMENT REQUIREMENTS
 
-Report: [report](DumbDumberDumbest_Report.pdf).
+Report: [report](DumbDumberDumbest_Report.docx).
 Wireframe: [Wireframe](DumbDumberDumbest_Wireframe.pdf).
-Walkthrough Video [walkthrough video]().
+Walkthrough Video [walkthrough video](VideoWalkthrough.mkv).
