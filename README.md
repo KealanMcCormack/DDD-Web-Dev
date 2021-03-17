@@ -11,5 +11,5 @@
 ##ADDITIONAL ASSIGNMENT REQUIREMENTS
 
 Report: [report](DumbDumberDumbest_Report.pdf).
-Wireframe: [wireframe]().
+Wireframe: [DumbDumberDumbest Wireframe.pdf]().
 Walkthrough Video [walkthrough video]().
