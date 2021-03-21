@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
@@ -229,12 +230,12 @@ public class MainController {
     }
 
     @PostMapping("/owner/add/product")
-    public @ResponseBody String addProduct(@RequestBody Product newAddition){
+    public @ResponseBody String addProduct(Product newAddition, @RequestParam("image") MultipartFile multipartFile){
+
+
         newAddition.setId(productID);
         productID++;
-        //if(loggedInCustomer.getClass() == Owner.class){
-            newAddition.setOwnerId(((Owner) loggedInCustomer).getOwnerId());
-        //}
+        newAddition.setOwnerId(((Owner) loggedInCustomer).getOwnerId());
         System.out.println(newAddition.toString());
         productRepository.save(newAddition);
         return "";

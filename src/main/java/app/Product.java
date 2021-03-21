@@ -24,6 +24,9 @@ public class Product {
     @Column
     String hidden;
 
+    @Column(nullable = true, length = 64)
+    private String photos;
+
     public Product(){
 
     }
